@@ -1,0 +1,91 @@
+<div class="relative bg-black">
+  <div class="flex items-center justify-center">
+    <h2 class="hidden py-4 text-base font-medium text-white lg:block">Free Shipping over $100</h2>
+  </div>
+  <div class="px-4 mx-auto sm:px-6">
+    <div class="flex items-center justify-between px-[4rem] py-4 md:justify-start md:space-x-10 sm:px-4">
+
+      <div class="ml-3 -my-2 -mr-2 md:hidden">
+        <button type="button" class="inline-flex items-center justify-center p-2 focus:outline-none">
+          {% render 'icon-menu' %}
+        </button>
+      </div>
+
+      <!-- Store Name / Store Logo -->
+      <div class="flex justify-start truncate lg:flex-1">
+        {% if section.settings.logo != blank %}
+        <a href="{{ routes.root_url }}" class="flex items-center">
+          <img src="{{ 'hero-image.png' | image_url }}" alt="{{ shop.name }}" class="w-auto h-12"></a>
+        {% else %}
+        <h1 class="text-3xl font-bold text-white truncate">{{ shop.name }}</h1>
+        {% endif %}
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav x-data="{ open: false }"
+        class="items-center justify-end p-5 space-x-12 bg-[#191919] rounded-full hidden lg:flex">
+        {% for link in linklists['main-menu'].links %}
+        {% if link.links != blank %}
+        <div class="relative">
+          <button x-on:click="open = ! open" type="button"
+            class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
+            {{ link.title }}
+            {% render 'icon-dropdown' %}
+          </button>
+          <div x-show="open" @click.away="open = false"
+            class="absolute z-10 w-screen max-w-md px-2 mt-5 -ml-5 transform sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+            <div class="overflow-hidden border rounded-lg shadow-lg ring-black ring-opacity-5">
+              <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
+
+                <!-- CREATE THE SUBLINK -->
+                {% for childlink in link.links %}
+                <a class="flex p-3 -m-3 rounded-lg items start hover:bg-gray-100">
+                  <div class="ml-4">
+                    <p class="text-base font-medium text-gray-900">
+                      {{ childlink.title }}
+                    </p>
+                  </div>
+                </a>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="relative">
+          <a href="{{ link.url }}" class="text-[20px] font-medium text-white hover:text-gray-900">{{ link.title }}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <!-- Cart Button / Account Link -->
+
+        <button class="text-base text-gray-500 whitespace-nowrap hover:text-gray-900">{% render 'icon-search'
+          %}</button>
+
+        <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">
+          {% render 'icon-login' %}</a>
+
+        <a href="{{ routes.cart_url }}" class="text-base text-gray-500 whitespace-nowrap hover:text-gray-900">
+          {% render 'icon-shopping-bag' %} </a>
+
+      </nav>
+    </div>
+  </div>
+</div>
+
+{% comment %}
+{% schema %}
+{
+"name": "header",
+"settings": [
+{
+"type": "link_list",
+"id": "menu",
+"default": "main-menu",
+"label": "Navigation menu"
+}]
+}
+{% endschema %}
+{% endcomment %}
