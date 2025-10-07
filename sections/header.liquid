@@ -65,10 +65,7 @@
     </div>
   </div>
 
-  <div
-    x-show="mobileMenuOpen"
-    x-cloak
-    class="absolute z-10 top-0 inset-x-0 transform origin-top-left md:hidden">
+  <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 transform origin-top-left md:hidden">
     <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-black w-full">
       <div class="p-5 divide-y-2">
 
@@ -80,12 +77,18 @@
             </button>
           </div>
           <div>
-            <a href="{{ routes.root_url }}" class="site-logo">
-              <img
-                src="{{ 'image 1.png' | asset_url }}"
-                alt="{{ shop.name }}"
-                width="180"
-                height="30"></a>
+            {% if section.settings.logo != blank %}
+              <a href="{{ routes.root_url }}" class="site-logo">
+                <img
+                  src="{{ section.settings.logo | asset_url }}"
+                  alt="{{ shop.name }}"
+                  width="180"
+                  height="30"
+                  loading="eager">
+              </a>
+            {% else %}
+              <a href="{{ routes.root_url }}" class="text-white text-xl font-bold">{{ shop.name }}</a>
+            {% endif %}
           </div>
         </div>
 
@@ -130,8 +133,7 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo Image"
-      },
-      {
+      }, {
         "type": "link_list",
         "id": "menu",
         "label": "Header Menu",
