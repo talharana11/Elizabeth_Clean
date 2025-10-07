@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+    /* Custom screens */
+    --breakpoint-xs: 425px;
+    --breakpoint-sm: 500px;
+
+    /* Your existing customizations */
+    --max-width-6xl: 72rem;
+    --height-94: 22rem;
+}

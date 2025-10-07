@@ -1,0 +1,33 @@
+<div class="flex justify-center items-center bg-black py-4 text-white font-medium text-xl">
+  {% for block in section.blocks %}
+    {% if block.settings.text_bar != blank %}
+      <p>{{ block.settings.text_bar }}</p>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Announcement Bar",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "announcement_text",
+        "name": "Announcement text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text_bar",
+            "label": "Add announcement text",
+            "default": "Free Shipping over $100"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Announcement Bar"
+      }
+    ]
+  }
+{% endschema %}

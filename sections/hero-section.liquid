@@ -1,0 +1,122 @@
+<div class="max-w-[1450px] w-full mx-auto relative">
+  <div class="w-full">
+    <img
+      src="{{ 'hero-image.png' | asset_url }}"
+      alt=""
+      width=""
+      height=""
+      class="min-h-screen bg-cover w-full bg-center object-cover">
+
+    <div class="absolute top-40 left-14">
+      <h2 class="text-[20px] font-medium text-white mb-2">
+        Your specialist in wireless lighting
+      </h2>
+
+      <div class="flex flex-col lg:flex-row items-center gap-8">
+        <!-- Left Column - Text Content -->
+        <div class=" w-full">
+          <h1 class="text-[80px] font-light text-white leading-22 mb-4">
+            Atmospheric Light, <br> Simple and Wireless
+          </h1>
+
+          <p class="w-1/3 text-white text-[16px] font-light mb-8 leading-normal">
+            Discover KL Home's innovative, wireless lighting solutions that blend modern design with energy efficiency. Easy to install, rechargeable, and stylish, our lights enhance your space with effortless elegance and long-lasting performance.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="mb-10">
+            <a href="#" class="inline-block  border-2 uppercase bg-[#FFFFFF26] text-white font-medium text-[20px] py-3 px-14 rounded-xl shadow-md">
+              SHOP NOW
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute top-180 right-6">
+      <img
+        src="{{ 'group-bg.png' |  asset_url }}"
+        alt="{{  }}"
+        width=""
+        height=""
+        class="w-90 h-60 relative">
+      <div>
+        <div class="absolute w-[70%] bottom-0 ml-4">
+          <div class="flex justify-center flex-col">
+            <div class="flex w-25">
+              <img
+                src="{{ 'first.png' | asset_url }}"
+                alt="Customer 1"
+                width=""
+                height=""
+                class="w-14 h-14 rounded-full">
+
+              <img
+                src="{{ 'second.png' | asset_url }}"
+                alt="Customer 2"
+                width=""
+                height=""
+                class="w-14 h-14 rounded-full">
+
+              <img
+                src="{{ 'third.png' | asset_url }}"
+                alt="Customer 3"
+                width=""
+                height=""
+                class="w-14 h-14 rounded-full">
+
+              <img
+                src="{{ 'fourth.png' | asset_url }}"
+                alt="Customer 4"
+                width=""
+                height=""
+                class="w-14 h-14 rounded-full">
+            </div>
+
+            <div class="px-2">
+              <h2 class="text-[52px] font-bold text-white">14500+</h2>
+              <h3 class="text-[20px] font-medium text-white">Satisfied Customers at KL Home®
+                {% render 'icon-star' %}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} {% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [],
+    "blocks": [
+        {
+          "type": "hero_section",
+          "name": "Hero Image",
+          "settings": [
+            {
+                "type": "image_picker",
+                "id": "hero_image",
+                "label": "Logo Image",
+                "info": "Upload your store logo"
+            }
+          ],
+        },
+        {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Background Image"
+        },
+        {
+        "type": "image_picker",
+        "id": "group_image",
+        "label": "Customer image"
+        }
+      ],
+    "presets": [
+      {
+        "name": "Hero Section"
+      }
+    ]
+  }
+{% endschema %} {% endcomment %}

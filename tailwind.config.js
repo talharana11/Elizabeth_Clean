@@ -1,21 +1,16 @@
-/** @type {import('tailwindcss').config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-    "./assets/*.liquid", // Adjust according to your file structure
-    "./layout/*.liquid",
-    "./sections/*.liquid",
-    "./snippets/*.liquid",
-    "./templates/*.liquid",
-    "./templates/customers/*.liquid",
+        "./**/*.liquid",
+        "./assets/*.liquid",
+        "./layout/*.liquid",
+        "./sections/*.liquid",
+        "./snippets/*.liquid",
+        "./templates/*.liquid",
+        "./templates/customers/*.liquid",
     ],
     theme: {
         extend: {
-            maxWidth: {
-                "6xl": "72rem",
-            },
-            height: {
-                94: "22rem",
-            },
         },
     },
     plugins: [],
