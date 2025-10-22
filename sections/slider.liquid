@@ -1,0 +1,99 @@
+<div class="brands-slider-section py-14">
+  <div class="swiper brands-slider w-full relative overflow-hidden">
+    <div class="swiper-wrapper flex absolute transform-origin-center animate-rotateSlider">
+      {% for i in (1..6) %}
+        {% assign image_setting = 'slider_' | append: i %}
+        {% assign image = section.settings[image_setting] %}
+        {% if image != blank %}
+          <div class="swiper-slide flex items-center justify-center">
+            <img
+              src="{{ image | file_url }}"
+              alt="Brand {{ i }}"
+              width="150"
+              height="30"
+              class="w-[150px] h-[30px] object-contain transition-transform duration-300 hover:scale-105"
+              loading="lazy">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      const brandsSlider = new Swiper('.brands-slider', {
+        loop: true, // Ensures the slider continuously loops
+        slidesPerView: 4, // Default visible slides
+        spaceBetween: 30,
+        autoplay: {
+          delay: 0, // 0 for continuous scroll
+          disableOnInteraction: true, // Keep autoplay active even after interaction
+        },
+        speed: 12000,
+        breakpoints: {
+          320: { slidesPerView: 2 },
+          640: { slidesPerView: 3 },
+          768: { slidesPerView: 4 },
+          1024: { slidesPerView: 5 },
+          1280: { slidesPerView: 5 }
+        }
+      });
+  
+      console.log('✅ Continuous brands slider initialized');
+    } else {
+      console.error('❌ Swiper not loaded');
+    }
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Brands Slider",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_1",
+        "label": "Brand 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_2",
+        "label": "Brand 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_3",
+        "label": "Brand 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_4",
+        "label": "Brand 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_5",
+        "label": "Brand 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_6",
+        "label": "Brand 6"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Brands Slider",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

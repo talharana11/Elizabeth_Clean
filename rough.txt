@@ -1,0 +1,1007 @@
+<div class="container px-5 py-24 mx-auto">
+  <div class="w-full">
+    <h1 class="text-white text-[40px] font-light font-['Times_New_Roman']">Our Bestsellers</h1>
+  </div>
+  <div class="flex flex-wrap m-4">
+    {% for product in collections.bestsellers.products %}
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img
+            src="{{ product.featured_image | image_url: width: 320 }}"
+            alt="{{ product.title }}"
+            width=""
+            height=""
+            class="w-full h-[350px] object-cover" />
+        </a>
+        <div class="mt-4 flex flex-col items-center justify-center">
+          <div class="flex gap-2 py-2">
+            <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+            <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          </div>
+          <h1 class="text-white text-xl tracking-widest title-font">{{ product.title }}</h1>
+          <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ product.vendor }}</h3>
+          <div class="flex gap-4 py-1">
+            <span class="flex text-yellow-400 text-sm">
+              {% for i in (1..5) %}
+                {% render 'icon-star' %}
+              {% endfor %}
+            </span>
+            <p class="text-[16px] text-white">{{ product.reviews_count }} Reviews</p>
+          </div>
+          <p class="mt-1 text-white text-2xl leading-normal">{{ product.price | money }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+<div class="container mx-auto mt-10">
+  <div class="w-full">
+    <h1 class="text-white text-[40px] font-light font-['Times_New_Roman'] mb-10">Our Bestsellers</h1>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 m-4">
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-1.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">LED Cube Wall Lamp</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-2.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-3.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-4.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-1.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-2.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-3.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ 'light-4.png' | asset_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">TABLE Lamp</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">17 Reviews</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container px-4 py-40 mx-auto">
+                      <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                        <div class="w-full bg-white">
+                          <div class="flex flex-col justify-center items-center py-14">
+                            <h1 class="font-Montserrat font-medium text-[18px] ">Excellent</h1>
+                            <span class="flex text-green-700 text-[100px]">
+                              {% for i in (1..5) %}
+                                {% render 'icon-star' %}
+                              {% endfor %}
+                            </span>
+                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Based on
+                              <span>456 reviews</span>
+                            </h2>
+                            <div class="flex justify-center">
+                              {% render 'icon-star' %}
+                              <p class="text-gray-500">Trustpilot</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-full lg:mb-0 mb-6 p-4">
+                          <div class="text-center bg-white">
+                            <span class="flex text-green-700">
+                              {% for i in (1..5) %}
+                                {% render 'icon-star' %}
+                              {% endfor %}
+                            </span>
+                            <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">ALPER KAMU</h2>
+                            <p class="text-gray-500">UI Develeoper</p>
+                          </div>
+                        </div>
+                        <div class="w-full lg:mb-0 p-4">
+                          <div class="text-center bg-white">
+                            <span class="flex text-green-700">
+                              {% for i in (1..5) %}
+                                {% render 'icon-star' %}
+                              {% endfor %}
+                            </span>
+                            <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
+                            <p class="text-gray-500">CTO</p>
+                          </div>
+                        </div>
+                        <div class="w-full lg:mb-0 p-4">
+                          <div class="text-center bg-white">
+                            <span class="flex text-green-700">
+                              {% for i in (1..5) %}
+                                {% render 'icon-star' %}
+                              {% endfor %}
+                            </span>
+                            <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
+                            <p class="text-gray-500">CTO</p>
+                          </div>
+                        </div>
+                      </div>
+</div>
+
+
+
+<div class="container px-4 py-24 mx-auto">
+  <div class="flex items-center justify-between">
+    <!-- Slider Container -->
+    <div class="relative w-full">
+      <!-- Navigation Arrows -->
+      <button class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white border-2 border-white  p-3 rounded-full shadow-lg -ml-20">
+        {% render 'icon-chevron-left' %}
+      </button>
+
+      <button class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white border-2 border-white p-3 rounded-full shadow-lg -mr-20">
+        {% render 'icon-chevron-right' %}
+      </button>
+
+      <!-- Swiper Wrapper -->
+      <div class="overflow-hidden">
+        <div class="flex gap-4 transition-transform duration-300 ease-in-out">
+          <!-- 1 - Rating Summary -->
+          <div class="w-full bg-white p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex flex-col justify-center items-center py-6 space-y-3">
+              <h1 class="font-Montserrat text-[18px] font-medium text-black leading-[1.44]">Excellent</h1>
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <h2 class="text-gray-900 text-sm font-medium tracking-wide">
+                Based on
+                <span class="underline decoration-1 decoration-gray-900">456 reviews</span>
+              </h2>
+              <div class="flex justify-center items-center space-x-1">
+                <div class="text-green-700">★</div>
+                <p class="text-gray-900 text-sm font-medium">Trustpilot</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 - Review Card -->
+          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex justify-between items-start mb-3">
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <p class="text-sm text-black">2 days ago</p>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
+            <p class="leading-relaxed text-black text-sm mb-4">
+              I love this product because the support is great. Please ...
+            </p>
+            <p class="font-semibold text-sm">Worldtraveler</p>
+          </div>
+
+          <!-- 3 - Review Card -->
+          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex justify-between items-start mb-3">
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <p class="text-sm text-black">2 days ago</p>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
+            <p class="leading-relaxed text-black text-sm mb-4">
+              I love this product because the support is great. Please ...
+            </p>
+            <p class="font-semibold text-sm">Worldtraveler</p>
+          </div>
+
+          <!-- 4 - Review Card -->
+          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex justify-between items-start mb-3">
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <p class="text-sm text-black">2 days ago</p>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
+            <p class="leading-relaxed text-black text-sm mb-4">
+              I love this product because the support is great. Please ...
+            </p>
+            <p class="font-semibold text-sm">Worldtraveler</p>
+          </div>
+
+          <!-- 5 - Additional Review Card -->
+          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex justify-between items-start mb-3">
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <p class="text-sm text-black">3 days ago</p>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Amazing Quality</h3>
+            <p class="leading-relaxed text-black text-sm mb-4">
+              The quality exceeded my expectations. Will definitely buy again!
+            </p>
+            <p class="font-semibold text-sm">HappyCustomer</p>
+          </div>
+
+          <!-- 6 - Additional Review Card -->
+          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
+            <div class="flex justify-between items-start mb-3">
+              <span class="flex text-green-700">
+                  <!-- Star icons would go here -->
+                ★★★★★
+              </span>
+              <p class="text-sm text-black">4 days ago</p>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Fast Delivery</h3>
+            <p class="leading-relaxed text-black text-sm mb-4">
+              Received my order much faster than expected. Very satisfied!
+            </p>
+            <p class="font-semibold text-sm">SatisfiedUser</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} <div class="container px-6 py-24 mx-auto">
+                                                                                          <div class="flex items-center justify-center">
+                                                                                            <!-- Slider Container -->
+                                                                                            <div class="relative w-full max-w-6xl">
+                                                                                              <!-- Navigation Arrows -->
+                                                                                              <button id="prev-button"
+                                                                                                class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 border-2 border-white rounded-full shadow-xl -ml-20"
+                                                                                                aria-label="Previous Review">
+                                                                                                {% render 'icon-chevron-left' %}
+                                                                                              </button>
+                                                                                        
+                                                                                              <!-- Swiper Wrapper (Mask) -->
+                                                                                              <div class="overflow-hidden">
+                                                                                                <div id="cards-container" class="flex gap-6 slider-track">
+                                                                                                  <!-- 1 - Rating Summary -->
+                                                                                                  <div class="review-card p-6 bg-white shadow-md">
+                                                                                                    <div class="flex flex-col justify-center items-center py-6 space-y-3">
+                                                                                                      <h1 class="font-Montserrat text-xl font-bold text-black leading-[1.44]">Excellent</h1>
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <h2 class="text-gray-900 text-sm font-medium tracking-wide">
+                                                                                                        Based on
+                                                                                                        <span class="underline decoration-2 decoration-black font-bold">456 reviews</span>
+                                                                                                      </h2>
+                                                                                                      <div class="flex justify-center items-center space-x-1 mt-2">
+                                                                                                        <span class="text-green-600">
+                                                                                                          {% render 'icon-star' %}
+                                                                                                        </span>
+                                                                                                        <p class="text-gray-900 text-sm font-semibold">Trust Score</p>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 2 - Review Card -->
+                                                                                                  <div class="review-card bg-white text-black p-6 shadow-md flex-shrink-0 xl:p-3">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">2 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Simply the best!</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      I love this product because the support is great. The quality is unmatched in this price range, and it
+                                                                                                      arrived faster than I expected. Highly recommend!
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-black">Alex R.</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 3 - Review Card -->
+                                                                                                  <div class="review-card bg-white text-black p-6 shadow-md flex-shrink-0 xl:p-3">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">2 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Outstanding Service</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      The team went above and beyond to help me with my order. Flawless experience from start to finish. I will
+                                                                                                      definitely be a repeat customer.
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-gray-900">Maria S.</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 4 - Review Card -->
+                                                                                                  <div class="review-card bg-white text-gray-800 p-6 flex-shrink-0">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">3 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Great Value!</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      Couldn't be happier with my purchase. The quality-to-price ratio is fantastic. You won't find a better
+                                                                                                      deal anywhere else.
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-black">Jordan L.</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 5 - Additional Review Card -->
+                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">3 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Amazing Quality</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      The quality exceeded my expectations. The packaging was secure, and everything worked perfectly right out
+                                                                                                      of the box. Will definitely buy again!
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-black">HappyCustomer</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 6 - Additional Review Card -->
+                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">4 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Fast Delivery</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      Received my order much faster than expected. The tracking updates were very accurate. Very satisfied with
+                                                                                                      the logistics!
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-black">SatisfiedUser</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                  <!-- 7 - Final Review Card -->
+                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
+                                                                                                    <div class="flex justify-between items-start mb-3">
+                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                        {% for i in (1..5) %}
+                                                                                                        {% render 'icon-star' %}
+                                                                                                        {% endfor %}
+                                                                                                      </span>
+                                                                                                      <p class="text-sm text-black">5 days ago</p>
+                                                                                                    </div>
+                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Highly Recommended</h3>
+                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                      A friend recommended this product, and I'm so glad they did. It's a game-changer! Don't hesitate to
+                                                                                                      purchase.
+                                                                                                    </p>
+                                                                                                    <p class="font-semibold text-sm text-black">ReviewGuru</p>
+                                                                                                  </div>
+                                                                                        
+                                                                                                </div>
+                                                                                              </div>
+                                                                                        
+                                                                                              <div class="flex justify-center gap-4 mt-6 md:hidden">
+                                                                                                <button id="prev-button-mobile"
+                                                                                                  class="bg-black/80 text-white p-3 rounded-full shadow-xl transition hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed"
+                                                                                                  aria-label="Previous Review">
+                                                                                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                                                                                  </svg>
+                                                                                                </button>
+                                                                                                <button id="next-button-mobile" class="bg-black text-white p-3 rounded-full shadow-xl transition "
+                                                                                                  aria-label="Next >Review">
+                                                                                                  {% render 'icon-chevron-right' %}
+                                                                                                </button>
+                                                                                              </div>
+                                                                                        
+                                                                                        
+                                                                                              <button id="next-button"
+                                                                                                class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 rounded-full shadow-xl border-2 border-white -mr-20"
+                                                                                                aria-label="Next Review">
+                                                                                                {% render 'icon-chevron-right' %}
+                                                                                              </button>
+                                                                                            </div>
+                                                                                          </div>
+</div> {% endcomment %}
+{% comment %} <script>
+                                                                                          // Constants and DOM Elements
+                                                                                          const cardsContainer = document.getElementById('cards-container');
+                                                                                          const prevButton = document.getElementById('prev-button');
+                                                                                          const nextButton = document.getElementById('next-button');
+                                                                                          const prevButtonMobile = document.getElementById('prev-button-mobile');
+                                                                                          const nextButtonMobile = document.getElementById('next-button-mobile');
+                                                                                          const reviewCards = document.querySelectorAll('.review-card');
+                                                                                          const totalCards = reviewCards.length;
+                                                                                          const GAP = 16; // Based on Tailwind's 'gap-4' (4 * 4px = 16px)
+                                                                                        
+                                                                                          let currentIndex = 0;
+                                                                                          let cardsPerView = 4; // Default for large screens
+                                                                                        
+                                                                                          /**
+                                                                                           * Determines how many cards should be visible based on screen width.
+                                                                                           * Corresponds to Tailwind breakpoints.
+                                                                                           * @returns {number} The number of cards to display.
+                                                                                           */
+                                                                                          function getCardsPerView() {
+                                                                                            const width = window.innerWidth;
+                                                                                            if (width < 768) {
+                                                                                              return 1; // Mobile (0px to 767px)
+                                                                                            } else if (width < 1024) {
+                                                                                              return 2; // Tablet (768px to 1023px)
+                                                                                            } else if (width < 1280) {
+                                                                                              return 3; // Small Desktop (1024px to 1279px)
+                                                                                            } else if (width < 1440) {
+                                                                                              return 3; // Medium Desktop (1280px to 1439px)
+                                                                                            } else {
+                                                                                              return 4; // Large Desktop (1440px and up)
+                                                                                            }
+                                                                                          }
+                                                                                        
+                                                                                          /**
+                                                                                           * Calculates and applies the required width and transform for the slider elements.
+                                                                                           */
+                                                                                          function updateSlider() {
+                                                                                            cardsPerView = getCardsPerView();
+                                                                                        
+                                                                                            // 1. Update Card Widths
+                                                                                            // Card width = (Container Width - Total Gaps) / cardsPerView
+                                                                                            // The container width is effectively 100% of its parent.
+                                                                                            const gapCount = cardsPerView - 1;
+                                                                                            const cardWidth = `calc((100% - ${gapCount * GAP}px) / ${cardsPerView})`;
+                                                                                        
+                                                                                            reviewCards.forEach(card => {
+                                                                                              card.style.width = cardWidth;
+                                                                                            });
+                                                                                        
+                                                                                            // 2. Calculate the maximum number of moves possible
+                                                                                            // The last movable index is when the first card in the view is at position: totalCards - cardsPerView
+                                                                                            const maxIndex = totalCards - cardsPerView;
+                                                                                        
+                                                                                            // Ensure currentIndex does not exceed maxIndex
+                                                                                            if (currentIndex > maxIndex || currentIndex < 0) {
+                                                                                              currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+                                                                                            }
+                                                                                        
+                                                                                            // 3. Calculate Translation
+                                                                                            // Translation is based on the starting position of the card at currentIndex.
+                                                                                            // Distance = (Card Width + Gap) * currentIndex
+                                                                                            const translateDistance = currentIndex * (cardsContainer.children[0].offsetWidth + GAP);
+                                                                                            cardsContainer.style.transform = `translateX(-${translateDistance}px)`;
+                                                                                        
+                                                                                            // 4. Update Button States
+                                                                                            prevButton.disabled = prevButtonMobile.disabled = currentIndex === 0;
+                                                                                            nextButton.disabled = nextButtonMobile.disabled = currentIndex >= maxIndex;
+                                                                                          }
+                                                                                        
+                                                                                          /**
+                                                                                           * Moves the slider to the previous set of cards.
+                                                                                           */
+                                                                                          function slidePrev() {
+                                                                                            // Move back by the number of cards currently visible
+                                                                                            currentIndex = Math.max(0, currentIndex - cardsPerView);
+                                                                                            updateSlider();
+                                                                                          }
+                                                                                        
+                                                                                          /**
+                                                                                           * Moves the slider to the next set of cards.
+                                                                                           */
+                                                                                          function slideNext() {
+                                                                                            // Move forward by the number of cards currently visible
+                                                                                            const maxIndex = totalCards - cardsPerView;
+                                                                                            currentIndex = Math.min(maxIndex, currentIndex + cardsPerView);
+                                                                                            updateSlider();
+                                                                                          }
+                                                                                        
+                                                                                        
+                                                                                          // --- Event Listeners ---
+                                                                                        
+                                                                                          // Bind slide functions to the navigation buttons (both desktop and mobile controls)
+                                                                                          prevButton.addEventListener('click', slidePrev);
+                                                                                          nextButton.addEventListener('click', slideNext);
+                                                                                          prevButtonMobile.addEventListener('click', slidePrev);
+                                                                                          nextButtonMobile.addEventListener('click', slideNext);
+                                                                                        
+                                                                                          // Update the slider on initial load and whenever the window resizes
+                                                                                          window.addEventListener('load', updateSlider);
+                                                                                          window.addEventListener('resize', updateSlider);
+                                                                                        
+                                                                                          // Initial call to set up the slider correctly on load
+                                                                                          updateSlider();
+</script> {% endcomment %}
+{% comment %} <div class="container px-6 py-24 mx-auto">
+                                                                                        <div class="flex items-center justify-center"> 
+                                                                                        <!-- Slider Container --> 
+                                                                                        <div class="relative w-full max-w-[1200px]"> 
+                                                                                        <!-- Navigation Arrows --> 
+                                                                                        <button id="prev-button" 
+                                                                                        class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 border-2 border-white rounded-full shadow-xl -ml-20 hidden md:block" 
+                                                                                        aria-label="Previous Review"> 
+                                                                                        {% render 'icon-chevron-left' %} 
+                                                                                        </button> 
+                                                                                        <!-- Swiper Wrapper (Mask) --> 
+                                                                                        <div class="overflow-hidden"> 
+                                                                                        <div id="cards-container" class="flex gap-4 transition-transform duration-300"> 
+                                                                                        <!-- 1 - Rating Summary --> 
+                                                                                        <div class="p-6 bg-white shadow-md min-w-[300px]"> 
+                                                                                        <div class="flex flex-col justify-center items-center py-6 space-y-3"> 
+                                                                                        <h1 class="font-bold text-xl text-black leading-[1.44]">Excellent</h1> 
+                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        {% for i in (1..5) %} 
+                                                                                        {% render 'icon-star' %} 
+                                                                                        {% endfor %} 
+                                                                                        </span> 
+                                                                                        <h2 class="text-gray-900 text-sm font-medium tracking-wide"> 
+                                                                                        Based on 
+                                                                                        <span class="underline decoration-2 decoration-black font-bold">456 reviews</span> 
+                                                                                        </h2> 
+                                                                                        <div class="flex justify-center items-center space-x-1 mt-2"> 
+                                                                                        <span class="text-green-600"> 
+                                                                                        <i class="fas fa-star"></i> 
+                                                                                        </span> 
+                                                                                        <p class="text-gray-900 text-sm font-semibold">Trust Score</p> 
+                                                                                        </div> 
+                                                                                        </div> 
+                                                                                        </div> 
+                                                                                        <!-- 2 - Review Card --> 
+                                                                                        <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
+                                                                                        <div class="flex justify-between items-start mb-3"> 
+                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        {% for i in (1..5) %} 
+                                                                                        {% render 'icon-star' %} 
+                                                                                        {% endfor %} 
+                                                                                        </span> 
+                                                                                        <p class="text-sm text-black">2 days ago</p> 
+                                                                                        </div> 
+                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
+                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
+                                                                                        I love this product because the support is great. Please ... 
+                                                                                        </p> 
+                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        </div> 
+                                                                                        <!-- 3 - Review Card --> 
+                                                                                        <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
+                                                                                        <div class="flex justify-between items-start mb-3"> 
+                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        {% for i in (1..5) %} 
+                                                                                        {% render 'icon-star' %} 
+                                                                                        {% endfor %} 
+                                                                                        </span> 
+                                                                                        <p class="text-sm text-black">2 days ago</p> 
+                                                                                        </div> 
+                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
+                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
+                                                                                        I love this product because the support is great. Please ... 
+                                                                                        </p> 
+                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        </div> 
+                                                                                        <!-- 4 - Review Card --> 
+                                                                                        <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
+                                                                                        <div class="flex justify-between items-start mb-3"> 
+                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        {% for i in (1..5) %} 
+                                                                                        {% render 'icon-star' %} 
+                                                                                        {% endfor %} 
+                                                                                        </span> 
+                                                                                        <p class="text-sm text-black">2 days ago</p> 
+                                                                                        </div> 
+                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
+                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
+                                                                                        I love this product because the support is great. Please ... 
+                                                                                        </p> 
+                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        </div> 
+                                                                                        <!-- 5 - Review Card --> 
+                                                                                        <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
+                                                                                        <div class="flex justify-between items-start mb-3"> 
+                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        {% for i in (1..5) %} 
+                                                                                        {% render 'icon-star' %} 
+                                                                                        {% endfor %} 
+                                                                                        </span> 
+                                                                                        <p class="text-sm text-black">2 days ago</p> 
+                                                                                        </div> 
+                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
+                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
+                                                                                        I love this product because the support is great. Please ... 
+                                                                                        </p> 
+                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        </div> 
+                                                                                        </div> 
+                                                                                        </div> 
+                                                                                        <div class="flex justify-center gap-4 mt-6 md:hidden"> 
+                                                                                        <button id="prev-button-mobile" 
+                                                                                        class="bg-black/80 text-white p-3 rounded-full shadow-xl transition hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed" 
+                                                                                        aria-label="Previous Review"> 
+                                                                                        {% render 'icon-chevron-left' %} 
+                                                                                        </button> 
+                                                                                        <button id="next-button-mobile" 
+                                                                                        class="bg-black text-white p-3 rounded-full shadow-xl transition hover:bg-black/80" aria-label="Next Review"> 
+                                                                                        {% render 'icon-chevron-right' %} 
+                                                                                        </button> 
+                                                                                        </div> 
+                                                                                        <button id="next-button" 
+                                                                                        class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 rounded-full shadow-xl border-2 border-white -mr-20 hidden md:block" 
+                                                                                        aria-label="Next Review"> 
+                                                                                        {% render 'icon-chevron-right' %} 
+                                                                                        </button> 
+                                                                                        </div>
+                                                                                        </div>
+                      </div>
+                                                                                        <script>
+                                                                                        document.addEventListener('DOMContentLoaded', function () { 
+                                                                                        const track = document.getElementById('cards-container'); 
+                                                                                        const prevButton = document.getElementById('prev-button'); 
+                                                                                        const nextButton = document.getElementById('next-button'); 
+                                                                                        const prevButtonMobile = document.getElementById('prev-button-mobile'); 
+                                                                                        const nextButtonMobile = document.getElementById('next-button-mobile'); 
+                                                                                        const cardWidth = 316; // 300px (min-w) + 16px (gap) 
+                                                                                        let position = 0; 
+                                                                                        function updateButtons() { 
+                                                                                        prevButton.disabled = position >= 0; 
+                                                                                        prevButtonMobile.disabled = position >= 0; 
+                                                                                        // Check if we've reached the end 
+                                                                                        const maxScroll = track.scrollWidth - track.parentElement.offsetWidth; 
+                                                                                        nextButton.disabled = Math.abs(position) >= maxScroll; 
+                                                                                        nextButtonMobile.disabled = Math.abs(position) >= maxScroll; 
+                                                                                        } 
+                                                                                        function slide(direction) { 
+                                                                                        const containerWidth = track.parentElement.offsetWidth; 
+                                                                                        const maxScroll = track.scrollWidth - containerWidth; 
+                                                                                        if (direction === 'next' && Math.abs(position) < maxScroll) { 
+                                                                                        position -= cardWidth; 
+                                                                                        if (Math.abs(position) > maxScroll) { 
+                                                                                        position = -maxScroll; 
+                                                                                        } 
+                                                                                        } else if (direction === 'prev' && position < 0) { 
+                                                                                        position += cardWidth; 
+                                                                                        if (position > 0) { 
+                                                                                        position = 0; 
+                                                                                        } 
+                                                                                        } 
+                                                                                        track.style.transform = `translateX(${position}px)`; 
+                                                                                        updateButtons(); 
+                                                                                        } 
+                                                                                        prevButton.addEventListener('click', () => slide('prev')); 
+                                                                                        nextButton.addEventListener('click', () => slide('next')); 
+                                                                                        prevButtonMobile.addEventListener('click', () => slide('prev')); 
+                                                                                        nextButtonMobile.addEventListener('click', () => slide('next')); 
+                                                                                        // Initialize button states 
+                                                                                        updateButtons();
+                                                                                        });
+                                                                                        </script>
+{% endcomment %}
+{% comment %} <div class="container mx-auto px-6 py-18">
+                                                                      <div class="relative">
+                                                                        <!-- Swiper Container -->
+                                                                        <div class="swiper myReviewSwiper">
+                                                                          <div class="swiper-wrapper">
+                                                                    
+                                                                            <!-- Rating Summary Card -->
+                                                                            <div class="swiper-slide flex justify-center">
+                                                                              <div class="bg-white w-[300px] md:w-[340px] h-[240px] flex flex-col items-center justify-center text-center p-6 rounded-lg shadow-md">
+                                                                                <h3 class="text-xl font-semibold mb-3 text-black">Excellent</h3>
+                                                                                <div class="flex mb-2 text-green-600">
+                                                                                  {% for i in (1..5) %}
+                                                                                    {% render 'icon-star' %}{% endfor %}
+                                                                                </div>
+                                                                                <p class="text-sm text-gray-800">
+                                                                                  Based on
+                                                                                  <span class="underline font-bold">456 reviews</span>
+                                                                                </p>
+                                                                                <div class="flex items-center justify-center gap-1 mt-2 text-green-600 font-semibold">
+                                                                                  {% render 'icon-star' %}
+                                                                                  <span class="text-black">Trustpilot</span>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                    
+                                                                            <!-- Review Card 1 -->
+                                                                            <div class="swiper-slide flex justify-center">
+                                                                              <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
+                                                                                <div>
+                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                    <div class="flex text-green-600">
+                                                                                      {% for i in (1..5) %}
+                                                                                        {% render 'icon-star' %}{% endfor %}
+                                                                                    </div>
+                                                                                    <p class="text-xs text-gray-700">2 days ago</p>
+                                                                                  </div>
+                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
+                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                    I love this product because the support is great. Please keep it up!
+                                                                                  </p>
+                                                                                </div>
+                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                              </div>
+                                                                            </div>
+                                                                    
+                                                                            <!-- Review Card 2 -->
+                                                                            <div class="swiper-slide flex justify-center">
+                                                                              <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
+                                                                                <div>
+                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                    <div class="flex text-green-600">
+                                                                                      {% for i in (1..5) %}
+                                                                                        {% render 'icon-star' %}{% endfor %}
+                                                                                    </div>
+                                                                                    <p class="text-xs text-gray-700">2 days ago</p>
+                                                                                  </div>
+                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
+                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                    I love this product because the support is great. Please keep it up!
+                                                                                  </p>
+                                                                                </div>
+                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                              </div>
+                                                                            </div>
+                                                                    
+                                                                            <!-- Review Card 3 -->
+                                                                            <div class="swiper-slide flex justify-center">
+                                                                              <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
+                                                                                <div>
+                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                    <div class="flex text-green-600">
+                                                                                      {% for i in (1..5) %}
+                                                                                        {% render 'icon-star' %}{% endfor %}
+                                                                                    </div>
+                                                                                    <p class="text-xs text-gray-700">2 days ago</p>
+                                                                                  </div>
+                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
+                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                    I love this product because the support is great. Please keep it up!
+                                                                                  </p>
+                                                                                </div>
+                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                              </div>
+                                                                            </div>
+                                                                    
+                                                                          </div>
+                                                                        </div>
+                                                                    
+                                                                        <!-- Navigation Arrows -->
+                                                                        <div class="absolute inset-y-0 flex items-center justify-between w-full">
+                                                                          <div class="swiper-button-prev !text-white bg-black/80 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center"></div>
+                                                                          <div class="swiper-button-next !text-white bg-black/80 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center"></div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    
+                                                                    
+                                                                    <script>
+                                                                      new Swiper(".myReviewSwiper", {
+                                                                        slidesPerView: 3,
+                                                                        spaceBetween: 20,
+                                                                        loop: true,
+                                                                        navigation: {
+                                                                          nextEl: ".swiper-button-next",
+                                                                          prevEl: ".swiper-button-prev",
+                                                                        },
+                                                                        breakpoints: {
+                                                                          0: { slidesPerView: 1.1, spaceBetween: 12 },
+                                                                          640: { slidesPerView: 2, spaceBetween: 16 },
+                                                                          1024: { slidesPerView: 3, spaceBetween: 24 },
+                                                                        },
+                                                                      });
+</script> {% endcomment %}

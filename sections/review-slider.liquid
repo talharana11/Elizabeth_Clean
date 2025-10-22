@@ -1,0 +1,127 @@
+<div class="container mx-auto px-6 py-24">
+  <div class="relative">
+    <!-- Swiper Container -->
+    <div class="swiper myReviewSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- 1. Rating Summary Card -->
+        <div class="swiper-slide flex justify-center">
+          <div class="bg-white w-[300px] md:w-[340px] h-[240px] flex flex-col items-center justify-center text-center p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-3 text-black">Excellent</h3>
+            <div class="flex mb-2 text-green-600">
+              {% for i in (1..5) %}
+                {% render 'icon-star' %}
+              {% endfor %}
+            </div>
+            <p class="text-sm text-gray-800">
+              Based on
+              <span class="underline font-bold">456 reviews</span>
+            </p>
+            <div class="flex items-center justify-center gap-1 mt-2 text-green-600 font-semibold">
+              {% render 'icon-star' %}
+              <span class="text-black">Trustpilot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Review Card -->
+        {% for block in section.blocks %}
+          <div class="swiper-slide flex justify-center">
+            <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <div class="flex text-green-600">
+                    {% for i in (1..5) %}
+                      {% render 'icon-star' %}
+                    {% endfor %}
+                  </div>
+                  <p class="text-xs text-gray-700">{{ block.settings.days_ago }}</p>
+                </div>
+                <h4 class="font-semibold text-lg mb-1 text-black">{{ block.settings.title }}</h4>
+                <p class="text-sm text-gray-800 leading-snug">{{ block.settings.text }}</p>
+              </div>
+              <p class="text-sm font-semibold mt-3 text-black">{{ block.settings.author }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Arrows with Shopify icons -->
+    <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between">
+      <button class="swiper-button-prev w-4 h-4 bg-black text-white p-4 border-2 border-white rounded-full -ml-16">
+        {% render 'icon-chevron-left' %}
+      </button>
+
+      <button class="swiper-button-next w-4 h-4 bg-black text-white p-4 rounded-full border-2 border-white -mr-16">
+        {% render 'icon-chevron-right' %}
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".myReviewSwiper", {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.1, spaceBetween: 6 },
+        640: { slidesPerView: 2, spaceBetween: 8 },
+        1024: { slidesPerView: 3, spaceBetween: 10 },
+        1280: { slidesPerView: 4, spaceBetween: 12 },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Review Slider",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "days_ago",
+            "label": "Days Ago",
+            "default": "2 days ago"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Review Title",
+            "default": "Best on the market"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Review Text",
+            "default": "I love this product because the support is great. Please keep it up!"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Worldtraveler"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Review Slider",
+        "category": "Testimonials"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,160 @@
+<div class="container py-24 mx-auto flex gap-12">
+  <!-- Left Section with Image -->
+  <div class="w-1/2 overflow-hidden">
+    <h1 class="text-white font-light text-4xl leading-tight font-['Times_New_Roman'] mb-4">
+      {{ section.settings.main_heading }}
+    </h1>
+    <div class="border rounded-xl overflow-hidden">
+      <img
+        src="{{ section.settings.main_image | file_url }}"
+        alt="feature"
+        width=""
+        height=""
+        class="rounded-xl h-[420px] w-full">
+    </div>
+  </div>
+
+  <!-- Right Section with Text Content -->
+  <div class="flex flex-col w-1/2">
+    <!-- Elegant Design & Versatility -->
+    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+      <div class="flex w-[345px] gap-4 cursor-pointer">
+        <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
+        <div>
+          <h2 class="text-white font-['Times_New_Roman'] text-3xl font-light leading-8 mb-3">
+            {{ section.settings.elegant_design_heading }}
+          </h2>
+          <p class="leading-normal text-[16px] text-white font-light tracking-wide">
+            {{ section.settings.elegant_design_text }}
+          </p>
+        </div>
+      </div>
+      <div class="flex-none w-[165px] h-[150px]">
+        <div class="border rounded-xl overflow-hidden">
+          <img
+            src="{{ section.settings.elegant_design_image | file_url }}"
+            alt="Light Image"
+            width=""
+            height=""
+            class="w-full h-full object-contain object-center rounded-xl">
+        </div>
+      </div>
+    </div>
+
+    <!-- High-Quality Light with Comfort -->
+    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+      <div class="flex w-[345px] gap-4 cursor-pointer">
+        <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
+        <div>
+          <h2 class="text-white font-['Times_New_Roman'] text-3xl font-light leading-8 mb-3">
+            {{ section.settings.quality_heading }}
+          </h2>
+          <p class="leading-normal text-base text-white font-light">{{ section.settings.quality_text }}</p>
+        </div>
+      </div>
+      <div class="flex-none w-[163px] h-[150px]">
+        <div class="border rounded-xl overflow-hidden">
+          <img
+            src="{{ section.settings.quality_image  | file_url }}"
+            alt="Light Image"
+            width=""
+            height=""
+            class="w-full h-full object-contain object-center rounded-xl">
+        </div>
+      </div>
+    </div>
+
+    <!-- Easy Installation & Rechargeable Features -->
+    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+      <div class="flex w-[345px] gap-4 cursor-pointer">
+        <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
+        <div>
+          <h2 class="text-white font-['Times_New_Roman'] text-3xl font-light leading-8 mb-3">
+            {{ section.settings.installation_heading }}
+          </h2>
+          <p class="leading-normal text-base text-white font-light">{{ section.settings.installation_text }}</p>
+        </div>
+      </div>
+      <div class="flex-none w-[163px] h-[150px]">
+        <div class="border rounded-xl overflow-hidden">
+          <img
+            src="{{ section.settings.installation_image  | asset_url }}"
+            alt="Light Image"
+            width=""
+            height=""
+            class="w-full h-full object-contain object-center rounded-xl">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Lighting Solutions",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Main Heading",
+        "id": "main_heading",
+        "default": "Illuminate Your Space with KL Home Lighting Solutions"
+      },
+      {
+        "type": "image_picker",
+        "label": "Main Image",
+        "id": "main_image"
+      },
+      {
+        "type": "text",
+        "label": "Elegant Design & Versatility Heading",
+        "id": "elegant_design_heading",
+        "default": "Elegant Design & Versatility"
+      },
+      {
+        "type": "textarea",
+        "label": "Elegant Design & Versatility Text",
+        "id": "elegant_design_text",
+        "default": "Our lights seamlessly blend into any room, whether it's the living room, bedroom, or hallway, offering both function and style."
+      },
+      {
+        "type": "image_picker",
+        "label": "Elegant Design Image",
+        "id": "elegant_design_image"
+      },
+      {
+        "type": "text",
+        "label": "High-Quality Light & Comfort Heading",
+        "id": "quality_heading",
+        "default": "High-Quality Light with Comfort"
+      },
+      {
+        "type": "textarea",
+        "label": "High-Quality Light & Comfort Text",
+        "id": "quality_text",
+        "default": "Each of our products provides soft, indirect light that enhances ambiance, making your space feel welcoming and cozy."
+      },
+      {
+        "type": "image_picker",
+        "label": "High-Quality Light Image",
+        "id": "quality_image"
+      },
+      {
+        "type": "text",
+        "label": "Easy Installation & Rechargeable Features Heading",
+        "id": "installation_heading",
+        "default": "Easy Installation & Rechargeable Features"
+      },
+      {
+        "type": "textarea",
+        "label": "Easy Installation & Rechargeable Features Text",
+        "id": "installation_text",
+        "default": "No need for complicated setups—our wireless, rechargeable lights are simple to install and maintain."
+      },
+      {
+        "type": "image_picker",
+        "label": "Easy Installation Image",
+        "id": "installation_image"
+      }
+    ]
+  }
+{% endschema %}

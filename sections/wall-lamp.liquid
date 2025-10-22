@@ -1,0 +1,205 @@
+<section class="bg-[#0D0D0D]">
+  <div class="relative mx-auto max-w-[1440px] min-h-screen px-6 py-20 flex items-center justify-between">
+
+    <!-- Top-right Arrows -->
+    <div class="absolute right-12 top-12 z-20 flex gap-3">
+      <button class="h-10 w-10 md:h-11 md:w-11 rounded-lg bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
+        {% render 'icon-left-arrow' %}
+      </button>
+      <button class="h-10 w-10 md:h-11 md:w-11 rounded-lg bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
+        {% render 'icon-right-arrow' %}
+      </button>
+    </div>
+
+    <!-- Left Side -->
+    <div class="relative flex items-center justify-center w-1/2">
+        <!-- Lamp Image -->
+      <img
+        src="{{  section.settings.product_image | file_url }}"
+        alt="360° Rechargeable Wall Lamp"
+        width="{{ section.settings.width }}"
+        height="{{ section.settings.height }}"
+        class="max-w-[520px] text-white w-[460px] h-[450px] object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.05)]" />
+
+      <!-- Vertical Rotated Text (both words in one line) -->
+      <h1 class="absolute right-[-45%] top-[35%] text-center -rotate-90 text-[#3A3A3A] font-bold leading-none tracking-wide select-none text-[115px]">
+        {{ section.settings.decorative_text }}
+      </h1>
+    </div>
+
+    <!-- Right Side -->
+    <div class="text-white max-w-[500px] space-y-8 ml-5">
+      <h2 class="font-['Times_New_Roman'] text-[26px] font-normal tracking-wide border-b-3 border-black pb-3 leading-[1.6]">
+        {{ section.settings.main_title }}
+      </h2>
+
+      <div>
+        <h3 class="font-Montserrat font-bold text-[18px] title-case leading-[1.22]">
+          {{ section.settings.feature_1_title }}
+        </h3>
+      </div>
+
+      <div>
+        <h4 class="font-bold font-Montserrat uppercase text-[18px] leading-[1.22] mb-2">
+          {{ section.settings.feature_2_title }}
+        </h4>
+        <p class="font-Montserrat text-[16px] font-normal leading-[1.3]">
+          {{ section.settings.feature_2_description }}
+        </p>
+      </div>
+
+      <div>
+        <a href="{{ section.settings.cta_link }}" class="font-Montserrat leading-normal inline-block bg-white text-black text-[20px] font-bold uppercase px-[28px] py-[12px] rounded-xl mt-4">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="bg-[#636363] py-6 px-4 flex justify-center gap-44">
+    <div class="flex items-center gap-4">
+      <img
+        src="{{ section.settings.icon_1 |  file_url }}"
+        alt="Shipping"
+        width="{{ section.settings.width }}"
+        height="{{ section.settings.height }}"
+        class="w-[22px] h-[16px] object-contain">
+      <h2 class="font-Montserrat font-semibold text-[18px] leading-[1.22] uppercase text-white">{{ section.settings.title_1 }}</h2>
+    </div>
+    <div class="flex items-center gap-4">
+      <img
+        src="{{ section.settings.icon_2 |  file_url }}"
+        alt="Shopping"
+        width="{{ section.settings.width }}"
+        height="{{ section.settings.height }}"
+        class="w-[18px] h-[18px] object-contain">
+      <h2 class="font-Montserrat font-semibold text-[18px] leading-[1.22] uppercase text-white">{{ section.settings.title_2 }}</h2>
+    </div>
+    <div class="flex items-center gap-4">
+      <img
+        src="{{ section.settings.icon_3 |  file_url }}"
+        alt="Files"
+        width="{{ section.settings.width }}"
+        height="{{ section.settings.height }}"
+        class="w-[24px] h-[24px] object-contain">
+      <h2 class="font-Montserrat font-semibold text-[18px] leading-[1.22] uppercase text-white">{{ section.settings.title_3 }}</h2>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "360° Wall Lamp Showcase",
+    "settings": [
+      {
+        "type": "header",
+        "content": "product"
+      },
+      {
+        "type": "image_picker",
+        "id": "product_image",
+        "label": "Product Image",
+        "info": "Upload the image of the 360° Rechargeable Wall Lamp."
+      },
+      {
+        "type": "text",
+        "id": "decorative_text",
+        "label": "Rotated Background Text",
+        "default": "Wall Lamp",
+        "info": "This is the vertical rotated text next to the product image."
+      },
+      {
+        "type": "header",
+        "content": "Product Details"
+      },
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Main Product Title",
+        "default": "360° Rechargeable Wall Lamp",
+        "info": "This is the main title for the product."
+      },
+      {
+        "type": "text",
+        "id": "feature_1_title",
+        "label": "Feature 1 Title",
+        "default": "Easy to assemble – no tools required",
+        "info": "This is the title for the first feature."
+      },
+      {
+        "type": "text",
+        "id": "feature_2_title",
+        "label": "Feature 2 Title",
+        "default": "Light in 2 Minutes",
+        "info": "This is the title for the second feature."
+      },
+      {
+        "type": "textarea",
+        "id": "feature_2_description",
+        "label": "Feature 2 Description",
+        "default": "Easily attach the mounting plate with the included double-sided tape. The powerful magnets ensure a firm and secure fit – without drilling holes or running electrical wires. Ideal for locations or rental properties where drilling is not desirable.",
+        "info": "This is the description for the second feature."
+      },
+      {
+        "type": "header",
+        "content": "Call to Action (CTA)"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Button Text",
+        "default": "Shop Now",
+        "info": "This is the text displayed on the 'Shop Now' button."
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Button Link",
+        "info": "This is the link associated with the 'Shop Now' button."
+      },
+      {
+        "type": "header",
+        "content": "Feature Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_1",
+        "label": "First Icon Image"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "First Feature Title",
+        "default": "PREMIUM SHIPPING IN NL/BE"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_2",
+        "label": "Second Icon Image"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "Second Feature Title",
+        "default": "BUY NOW, PAY LATER"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_3",
+        "label": "Third Icon Image"
+      },
+      {
+        "type": "text",
+        "id": "title_3",
+        "label": "Third Feature Title",
+        "default": "100 DAYS TO REFLECT"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Showcase Section",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

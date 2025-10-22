@@ -1,8 +1,8 @@
 {% assign main_menu_linklist = linklists[section.settings.menu].links %}
 
-<div class="relative bg-black" x-data="{ mobileMenuOpen: false}">
-  <div class="px-8 mx-auto max-w-[1450px] md:px-3 xs:px-0">
-    <div class="flex items-center justify-between py-4 ">
+<div class="relative" x-data="{ mobileMenuOpen: false}">
+  <div class="lg:px-14 mx-auto max-w-1550 md:px-3 xs:px-0">
+    <div class="flex items-center justify-between py-2 ">
       <!-- Mobile menu button -->
       <div class="flex items-center justify-between my-2 ml-3 mr-2 lg:hidden">
         <button
@@ -15,22 +15,31 @@
       <!-- Store Name / Store Logo -->
       <div class="flex truncate lg:flex-1 xs:justify-between">
         {% if section.settings.logo != blank %}
-          <a href="{{ routes.root_url }}" class="site-logo">
+          <a href="{{ routes.root_url }}">
             <img
-              src="{{ section.settings.logo | asset_url }}"
+              src="{{ section.settings.logo | file_url }}"
               alt="{{ shop.name }}"
-              width="200"
-              height="30"
-              loading="eager">
+              width=""
+              height=""
+              loading="eager"
+              class="h-[50px] w-[191px]">
           </a>
         {% else %}
-          <a href="{{ routes.root_url }}" class="text-white text-xl font-bold">{{ shop.name }}</a>
+          <a href="{{ routes.root_url }}">
+            <img
+              src="{{ 'logo.png' |  file_url }}"
+              alt="{{ shop.name }}"
+              width=""
+              height=""
+              class="h-[50px] w-[191px]"
+              loading="eager">
+          </a>
         {% endif %}
       </div>
 
       <!-- Navigation Menu -->
-      <nav class="flex items-center justify-end md:bg-none lg:bg-[#191919] rounded-full xl:p-8 xs:p-2 lg:p-4">
-        <div class="hidden xl:space-x-14 lg:space-x-6 md:space-x-4 sm:space-x-2 lg:flex">
+      <nav class="flex items-center justify-end md:bg-none lg:bg-[#191919] rounded-full xl:p-6 xs:p-2 lg:p-4">
+        <div class="hidden xl:space-x-16 lg:space-x-6 md:space-x-4 sm:space-x-2 lg:flex">
           {% for link in main_menu_linklist %}
             {% if link.links != blank %}
               <div class="relative">
@@ -41,7 +50,7 @@
               </div>
             {% else %}
               <div class="relative">
-                <a href="{{ link.url }}" class="text-[20px] lg:text-2xl font-medium text-white">{{ link.title }}</a>
+                <a href="{{ link.url }}" class="text-[20px] lg:text-xl font-medium leading-normal text-white">{{ link.title }}</a>
               </div>
             {% endif %}
           {% endfor %}
@@ -78,16 +87,25 @@
           </div>
           <div>
             {% if section.settings.logo != blank %}
-              <a href="{{ routes.root_url }}" class="site-logo">
+              <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ section.settings.logo | asset_url }}"
+                  src="{{ section.settings.logo | file_url }}"
                   alt="{{ shop.name }}"
-                  width="180"
-                  height="30"
-                  loading="eager">
+                  width=""
+                  height=""
+                  loading="eager"
+                  class="h-[26px] max-w-[101px]">
               </a>
             {% else %}
-              <a href="{{ routes.root_url }}" class="text-white text-xl font-bold">{{ shop.name }}</a>
+              <a href="{{ routes.root_url }}">
+                <img
+                  src="{{ 'logo.png' | file_url }}"
+                  alt="{{ shop.name }}"
+                  width=""
+                  height=""
+                  class="h-[26px] max-w-[101px]"
+                  loading="eager">
+              </a>
             {% endif %}
           </div>
         </div>
@@ -133,7 +151,8 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo Image"
-      }, {
+      },
+      {
         "type": "link_list",
         "id": "menu",
         "label": "Header Menu",

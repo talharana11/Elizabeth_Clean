@@ -1,0 +1,182 @@
+<div class="container px-5 py-24 mx-auto">
+  <div class="text-center w-full mb-20">
+    <h1 class="text-[40px] font-light mb-4 text-white font-['Times_New_Roman'] leading-9 tracking-wide">
+      {{ section.settings.main_heading }}
+    </h1>
+    <p class="w-1/2 mx-auto leading-normal text-[16px] text-white font-light">
+      {{ section.settings.main_description }}
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
+    {% for i in (1..6) %}
+      {% assign image_id = 'image_' | append: i %}
+      {% assign title_id = 'title_' | append: i %}
+      {% assign desc_id = 'description_' | append: i %}
+
+      {% if section.settings[title_id] != blank %}
+        <div class="bg-zinc-950 p-8 rounded-xl shadow-lg">
+          <div class="text-white mb-4">
+            {% if section.settings[image_id] %}
+              <img
+                src="{{ section.settings[image_id] | file_url}}"
+                alt="{{ section.settings[title_id] }}"
+                width=""
+                height=""
+                class="mx-auto w-20 h-20">
+            {% endif %}
+          </div>
+          <div class="w-[280px] mx-auto">
+            <h2 class="text-[18px] font-semibold leading-normal uppercase text-white mb-1">{{ section.settings[title_id] }}</h2>
+            <p class="text-white font-light text-[16px] leading-normal">{{ section.settings[desc_id] }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-14">
+    <a href="{{ section.settings.button_link }}" class="text-xl font-bold text-black bg-white px-[31px] py-[12px] rounded-xl uppercase">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Use of KL Home Lighting",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "How to Use Your KL Home Lighting"
+      },
+      {
+        "type": "textarea",
+        "id": "main_description",
+        "label": "Main Description",
+        "default": "Welcome to your new KL Home lighting experience! Our products are designed to be easy to set up and use, providing you with convenience, style, and energy efficiency. Follow the simple steps below to start enjoying your new lighting:"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "1 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_1",
+        "label": "1 Title",
+        "default": "UNBOX YOUR LIGHT"
+      },
+      {
+        "type": "textarea",
+        "id": "description_1",
+        "label": "1 Description",
+        "default": "Carefully remove the lighting product from its packaging."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "2 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_2",
+        "label": "2 Title",
+        "default": "CHARGE THE BATTERY"
+      },
+      {
+        "type": "textarea",
+        "id": "description_2",
+        "label": "2 Description",
+        "default": "Plug in the charging cable and fully charge the light until the indicator shows green."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "3 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_3",
+        "label": "3 Title",
+        "default": "INSTALL THE LIGHT"
+      },
+      {
+        "type": "textarea",
+        "id": "description_3",
+        "label": "3 Description",
+        "default": "Choose a flat surface, secure with adhesive strips or screws."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "4 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_4",
+        "label": "4 Title",
+        "default": "POWER ON"
+      },
+      {
+        "type": "textarea",
+        "id": "description_4",
+        "label": "4 Description",
+        "default": "Press and hold the power button for 2-3 seconds to turn on."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_5",
+        "label": "5 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_5",
+        "label": "5 Title",
+        "default": "ENJOY THE LIGHT"
+      },
+      {
+        "type": "textarea",
+        "id": "description_5",
+        "label": "5 Description",
+        "default": "Adjust brightness and color to create your perfect ambiance."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_6",
+        "label": "6 Image"
+      },
+      {
+        "type": "text",
+        "id": "title_6",
+        "label": "6 Title",
+        "default": "RECHARGE AS NEEDED"
+      },
+      {
+        "type": "textarea",
+        "id": "description_6",
+        "label": "6 Description",
+        "default": "When the light dims, recharge it to maintain performance."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "SHOP NOW"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Use of KL Home Lighting",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

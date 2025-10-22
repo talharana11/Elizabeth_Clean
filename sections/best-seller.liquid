@@ -1,0 +1,494 @@
+<div class="container mx-auto mt-10">
+  <div class="w-full">
+    <h1 class="text-white text-[40px] font-light font-['Times_New_Roman'] mb-10">
+      {{ section.settings.section_title }}
+    </h1>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 m-4">
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_1_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_1_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_1_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for j in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_1_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_1_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_2_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_2_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_2_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for j in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_2_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_2_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_3_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_3_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_3_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for j in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_3_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_3_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_4_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_4_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_4_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for j in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_4_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_4_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_5_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_5_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_5_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_5_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_5_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_6_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_6_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_6_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_6_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_6_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_7_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_7_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_7_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_7_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_7_price }}</p>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <a class="block relative rounded overflow-hidden">
+        <img
+          src="{{ section.settings.product_8_image | file_url }}"
+          alt="ecommerce"
+          width=""
+          height=""
+          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+      </a>
+      <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex gap-2 py-2">
+          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
+          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+        </div>
+        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_8_title }}</h1>
+        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_8_description }}</h3>
+        <div class="flex gap-4 py-1">
+          <span class="flex text-yellow-400 text-sm">
+            {% for i in (1..5) %}
+              {% render 'icon-star' %}
+            {% endfor %}
+          </span>
+          <p class="text-[16px] text-white">{{ section.settings.product_8_reviews }}</p>
+        </div>
+        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_8_price }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full mx-auto flex justify-center mt-10">
+    <a href="{{ section.settings.view_link }}" class="inline-block rounded font-bold text-[18px] leading-normal uppercase bg-white text-black py-1 px-4">{{ section.settings.view_text }}</a>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Bestsellers Section",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Section Title",
+        "id": "section_title",
+        "default": "Our Bestsellers"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 1 Image",
+        "id": "product_1_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 1 Title",
+        "id": "product_1_title",
+        "default": "LED Cube Wall Lamp"
+      },
+      {
+        "type": "text",
+        "label": "Description 1",
+        "id": "product_1_description",
+        "default": "Beside Groot Wit"
+      },
+      {
+        "type": "text",
+        "label": "Product 1 Reviews",
+        "id": "product_1_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 1 Price",
+        "id": "product_1_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 2 Image",
+        "id": "product_2_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 2 Title",
+        "id": "product_2_title",
+        "default": "ACHTERGROUND"
+      },
+      {
+        "type": "text",
+        "label": "Description 2",
+        "id": "product_2_description",
+        "default": "Beside Groot Wit"
+      },
+      {
+        "type": "text",
+        "label": "Product 2 Reviews",
+        "id": "product_2_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 2 Price",
+        "id": "product_2_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 3 Image",
+        "id": "product_3_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 3 Title",
+        "id": "product_3_title",
+        "default": "TABLE LAMP"
+      },
+      {
+        "type": "text",
+        "label": "Description 3",
+        "id": "product_3_description",
+        "default": "Wit Achterground"
+      },
+      {
+        "type": "text",
+        "label": "Product 3 Reviews",
+        "id": "product_3_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 3 Price",
+        "id": "product_3_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 4 Image",
+        "id": "product_4_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 4 Title",
+        "id": "product_4_title",
+        "default": "TABLE LAMP"
+      },
+      {
+        "type": "text",
+        "label": "Description 4",
+        "id": "product_4_description",
+        "default": "Wit Achterground"
+      },
+      {
+        "type": "text",
+        "label": "Product 4 Reviews",
+        "id": "product_4_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 4 Price",
+        "id": "product_4_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 5 Image",
+        "id": "product_5_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 5 Title",
+        "id": "product_5_title",
+        "default": "ACHTERGROUND"
+      },
+      {
+        "type": "text",
+        "label": "Description 5",
+        "id": "product_5_description",
+        "default": "Beside Groot Wit"
+      },
+      {
+        "type": "text",
+        "label": "Product 5 Reviews",
+        "id": "product_5_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 5 Price",
+        "id": "product_5_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 6 Image",
+        "id": "product_6_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 6 Title",
+        "id": "product_6_title",
+        "default": "ACHTERGROUND"
+      },
+      {
+        "type": "text",
+        "label": "Description 6",
+        "id": "product_6_description",
+        "default": "Wit Achterground"
+      },
+      {
+        "type": "text",
+        "label": "Product 6 Reviews",
+        "id": "product_6_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 6 Price",
+        "id": "product_6_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 7 Image",
+        "id": "product_7_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 7 Title",
+        "id": "product_7_title",
+        "default": "TABLE LAMP"
+      },
+      {
+        "type": "text",
+        "label": "Description 7",
+        "id": "product_7_description",
+        "default": "Wit Achterground"
+      },
+      {
+        "type": "text",
+        "label": "Product 7 Reviews",
+        "id": "product_7_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 7 Price",
+        "id": "product_7_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "image_picker",
+        "label": "Product 8 Image",
+        "id": "product_8_image"
+      },
+      {
+        "type": "text",
+        "label": "Product 8 Title",
+        "id": "product_8_title",
+        "default": "TABLE LAMP"
+      },
+      {
+        "type": "text",
+        "label": "Description 8",
+        "id": "product_8_description",
+        "default": "Wit Achterground"
+      },
+      {
+        "type": "text",
+        "label": "Product 8 Reviews",
+        "id": "product_8_reviews",
+        "default": "17 Reviews"
+      },
+      {
+        "type": "text",
+        "label": "Product 8 Price",
+        "id": "product_8_price",
+        "default": "$79.00"
+      },
+      {
+        "type": "text",
+        "id": "view_text",
+        "label": "View Text",
+        "default": "VIEW ALL"
+      },
+      {
+        "type": "url",
+        "id": "view_link",
+        "label": "View Link"
+      }
+    ]
+  }
+{% endschema %}

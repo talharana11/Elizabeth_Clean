@@ -1,28 +1,40 @@
 <!doctype html>
-<html>
-
+<html lang="en">
   <head>
-    <title>{{ page_title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <title>{{ page_title }}</title>
     <meta name="description" content="{{ page_description | escape }}">
     <link rel="canonical" href="{{ canonical_url }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }}
-    <!-- Header hook for plugins -->
+
+    {{ content_for_header }}
     {{ 'application.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'application.js' | asset_url }}" defer></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   </head>
 
-  <body>
+  <body class="bg-black">
     {% section 'announcement-bar' %}
     {% section 'header' %}
     {% section 'hero-section' %}
+    {% section 'slider' %}
+    {% section 'best-seller' %}
+    {% section 'image-text' %}
+    {% section 'lighting-solution' %}
+    {% section 'light-resource' %}
+    {% section 'your-space' %}
+    {% section 'wall-lamp' %}
+    {% section 'review-slider' %}
 
     <main role="main">
       {{ content_for_layout }}
     </main>
   </body>
-
 </html>
