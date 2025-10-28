@@ -2,6 +2,7 @@
 
 <div class="relative" x-data="{ mobileMenuOpen: false}">
   <div class="mx-auto lg:px-14 max-w-1550 md:px-3 xs:px-0">
+    <div class="flex items-center justify-between px-6 py-2">
       <!-- Mobile menu button -->
       <div class="flex items-center justify-between my-2 ml-4 mr-2 z-100 lg:hidden">
         <button
@@ -16,16 +17,20 @@
         {% if section.settings.logo != blank %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ section.settings.logo | file_url }}"
+              src="{{ section.settings.logo | image_url: width: 191 }}"
               alt="{{ shop.name }}"
+              width="{{ section.settings.hero_image.width }}"
+              height="{{ section.settings.hero_image.height }}"
               loading="eager"
               class="h-[50px] w-[191px]">
           </a>
         {% else %}
           <a href="{{ routes.root_url }}">
             <img
+              src="{{ 'logo.png' |  image_url: width: 191 }}"
               alt="{{ shop.name }}"
-              height=""
+              width="{{ section.settings.hero_image.width }}"
+              height="{{ section.settings.hero_image.height }}"
               class="h-[50px] w-[191px]"
               loading="eager">
           </a>
@@ -84,18 +89,20 @@
             {% if section.settings.logo != blank %}
               <a href="{{ routes.root_url }}">
                 <img
+                  src="{{ section.settings.logo | image_url: width: 100 }}"
                   alt="{{ shop.name }}"
-                  width=""
-                  height=""
+                  width="{{ section.settings.hero_image.width }}"
+                  height="{{ section.settings.hero_image.height }}"
                   loading="eager"
                   class="h-[26px] max-w-[101px]">
               </a>
             {% else %}
               <a href="{{ routes.root_url }}">
                 <img
+                  src="{{ 'logo.png' | image_url: width: 85 }}"
                   alt="{{ shop.name }}"
-                  width=""
-                  height=""
+                  width="{{ section.settings.hero_image.width }}"
+                  height="{{ section.settings.hero_image.height }}"
                   class="h-[26px] max-w-[101px]"
                   loading="eager">
               </a>
