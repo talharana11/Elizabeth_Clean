@@ -3,17 +3,17 @@
     <!-- Hero Background Image -->
     {% if section.settings.hero_image != blank %}
       <img
-        src="{{ section.settings.hero_image | file_url }}"
+        src="{{ section.settings.hero_image | image_url }}"
         alt="{{ section.settings.hero_image.alt | default: 'Hero Background' }}"
         loading="eager"
         width=""
         height=""
-        class="object-cover object-center w-full min-h-screen -mt-32 text-white px-18">
+        class="object-cover object-center w-full min-h-screen -mt-28 text-white px-18">
     {% endif %}
 
 
     <!-- Hero Text Content -->
-    <div class="absolute top-1/4 left-24">
+    <div class="absolute top-96 left-24">
       <h2 class="max-w-[350px] text-xl font-semibold text-white leading-normal mb-2">
         {{ section.settings.hero_subheading }}
       </h2>
@@ -41,11 +41,11 @@
   </div>
 
   <!-- Customer Section -->
-  <div class="absolute right-10 top-[60vh] md:top-[80vh] md:w-sm md:right-5">
+  <div class="absolute right-10 top-[60vh] md:top-[92vh] md:w-sm md:right-15">
     <div class="relative w-[500px] md:w-[350px]">
       {% if section.settings.customer_bg %}
         <img
-          src="{{ section.settings.customer_bg | file_url }}"
+          src="{{ section.settings.customer_bg | image_url }}"
           alt="Customer Background"
           width=""
           height=""
@@ -59,7 +59,7 @@
             {% for block in section.blocks %}
               {% if block.settings.customer_image %}
                 <img
-                  src="{{ 'block.settings.customer_image' | file_url }}"
+                  src="{{ 'block.settings.customer_image' | image_url }}"
                   alt="Customer {{ forloop.index }}"
                   width=""
                   height=""
