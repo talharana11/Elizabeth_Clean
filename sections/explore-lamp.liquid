@@ -1,132 +1,130 @@
 <div class="relative mx-auto max-w-[1440px] min-h-screen px-6 py-24 mt-8">
 
-  <div class="absolute z-20 flex gap-3 right-12 top-12">
-    <button class="h-10 w-10 md:h-11 md:w-11 bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
-      {% render 'icon-left-arrow' %}
-    </button>
-    <button class="h-10 w-10 md:h-11 md:w-11 bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
-      {% render 'icon-right-arrow' %}
-    </button>
-  </div>
+  {% if section.settings.show_carousel_buttons %}
+    <div class="absolute z-20 flex gap-3 right-12 top-12">
+      <button class="h-10 w-10 md:h-11 md:w-11 bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
+        {% render 'icon-left-arrow' %}
+      </button>
+      <button class="h-10 w-10 md:h-11 md:w-11 bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
+        {% render 'icon-right-arrow' %}
+      </button>
+    </div>
+  {% endif %}
 
   <div class="w-full">
     <h1 class="text-white text-[36px] font-normal font-['Times_New_Roman'] mb-10 leading-[1.3] title-case">
-      Explore Our Bestsellers
+      {{ section.settings.section_heading }}
     </h1>
   </div>
 
   <div class="grid grid-cols-1 m-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9">
 
-    <div class="w-full">
-      <a class="relative block overflow-hidden rounded">
-        <img
-          src="{{ 'light-1.png' | asset_url }}"
-          alt="ecommerce"
-          width=""
-          height=""
-          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
-      </a>
-      <div class="flex flex-col items-center justify-center mt-4 mb-10">
-        <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
-          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
+    {% for block in section.blocks %}
+      <div class="w-full" {{ block.shopify_attribute }}>
+        <a class="relative block overflow-hidden rounded">
+          {% if block.settings.product_image != blank %}
+            <img
+              src="{{ block.settings.product_image | image_url: width: 500 }}"
+              alt="{{ block.settings.product_title }}"
+              width=""
+              height=""
+              class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
+          {% endif %}
+        </a>
+        <div class="flex flex-col items-center justify-center mt-4 mb-10">
+          <div class="flex gap-2 py-2">
+            <div class="w-5 h-5 {{ block.settings.color_option_1 }} border-white rounded-full"></div>
+            <div class="w-5 h-5 {{ block.settings.color_option_2 }} border border-white rounded-full"></div>
+          </div>
+          <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] text-white tracking-wide">{{ block.settings.product_title }}</h1>
+          <h3 class="font-Montserrat text-[16px] font-semibold leading-normal py-1 text-[#838383]">{{ block.settings.product_subtitle }}</h3>
+          <div class="flex items-center gap-4 py-1">
+            <span class="flex text-sm text-yellow-400">
+              {% for j in (1..5) %}
+                {% render 'icon-star' %}
+              {% endfor %}
+            </span>
+            <p class="font-Montserrat font-semibold text-[16px] text-[#838383] leading-[1]">{{ block.settings.product_reviews }} Reviews</p>
+          </div>
+          <p class="font-Montserrat text-[24px] font-bold leading-normal text-white">{{ block.settings.product_price }}</p>
         </div>
-        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] text-white tracking-wide">ACHTERGROUND</h1>
-        <h3 class="font-Montserrat text-[16px] font-semibold leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
-        <div class="flex items-center gap-4 py-1">
-          <span class="flex text-sm text-yellow-400">
-            {% for j in (1..5) %}
-              {% render 'icon-star' %}
-            {% endfor %}
-          </span>
-          <p class="font-Montserrat font-semibold text-[16px] text-[#838383] leading-[1]">17 Reviews</p>
-        </div>
-        <p class="font-Montserrat text-[24px] font-bold leading-normal text-white">€79.00</p>
       </div>
-    </div>
-
-    <div class="w-full">
-      <a class="relative block overflow-hidden rounded">
-        <img
-          src="{{ 'light-2.png' | asset_url }}"
-          alt="ecommerce"
-          width=""
-          height=""
-          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
-      </a>
-      <div class="flex flex-col items-center justify-center mt-4 mb-10">
-        <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
-          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
-        </div>
-        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] text-white tracking-wide">ACHTERGROUND</h1>
-        <h3 class="font-Montserrat text-[16px] font-semibold leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
-        <div class="flex items-center gap-4 py-1">
-          <span class="flex text-sm text-yellow-400">
-            {% for j in (1..5) %}
-              {% render 'icon-star' %}
-            {% endfor %}
-          </span>
-          <p class="font-Montserrat font-semibold text-[16px] text-[#838383] leading-[1]">17 Reviews</p>
-        </div>
-        <p class="mt-1 font-Montserrat text-[24px] font-bold leading-normal text-white">€79.00</p>
-      </div>
-    </div>
-
-    <div class="w-full">
-      <a class="relative block overflow-hidden rounded">
-        <img
-          src="{{ 'light-3.png' | asset_url }}"
-          alt="ecommerce"
-          width=""
-          height=""
-          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
-      </a>
-      <div class="flex flex-col items-center justify-center mt-4 mb-10">
-        <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
-          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
-        </div>
-        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] text-white tracking-wide">TABLE LAMP</h1>
-        <h3 class="font-Montserrat text-[16px] font-semibold leading-normal py-1 text-[#838383]">Wit Achterground</h3>
-        <div class="flex items-center gap-4 py-1">
-          <span class="flex text-sm text-yellow-400">
-            {% for j in (1..5) %}
-              {% render 'icon-star' %}
-            {% endfor %}
-          </span>
-          <p class="font-Montserrat font-semibold text-[16px] text-[#838383] leading-[1]">17 Reviews</p>
-        </div>
-        <p class="mt-1 font-Montserrat text-[24px] font-bold leading-normal text-white">€79.00</p>
-      </div>
-    </div>
-
-    <div class="w-full">
-      <a class="relative block overflow-hidden rounded">
-        <img
-          src="{{ 'light-4.png' | asset_url }}"
-          alt="ecommerce"
-          width=""
-          height=""
-          class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
-      </a>
-      <div class="flex flex-col items-center justify-center mt-4">
-        <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
-          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
-        </div>
-        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] text-white tracking-wide">TABLE LAMP</h1>
-        <h3 class="font-Montserrat text-[16px] font-semibold leading-normal py-1 text-[#838383]">Wit Achterground</h3>
-        <div class="flex items-center gap-4 py-1">
-          <span class="flex text-sm text-yellow-400">
-            {% for j in (1..5) %}
-              {% render 'icon-star' %}
-            {% endfor %}
-          </span>
-          <p class="font-Montserrat font-semibold text-[16px] text-[#838383] leading-[1]">17 Reviews</p>
-        </div>
-        <p class="mt-1 font-Montserrat text-[24px] font-bold leading-normal text-white">€79.00</p>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
+
+
+{% schema %}
+  {
+    "name": "Explore Our Bestsellers",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Section Heading",
+        "default": "Explore Our Bestsellers"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_carousel_buttons",
+        "label": "Show Carousel Navigation Arrows",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_card",
+        "name": "Product Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product Image"
+          },
+          {
+            "type": "text",
+            "id": "product_title",
+            "label": "Product Title",
+            "default": "TABLE LAMP"
+          },
+          {
+            "type": "text",
+            "id": "product_subtitle",
+            "label": "Product Subtitle",
+            "default": "Wit Achterground"
+          },
+          {
+            "type": "text",
+            "id": "product_price",
+            "label": "Product Price",
+            "default": "€79.00"
+          },
+          {
+            "type": "number",
+            "id": "product_reviews",
+            "label": "Reviews Count",
+            "default": 17
+          },
+          {
+            "type": "color",
+            "id": "color_option_1",
+            "label": "Color Option 1",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "color_option_2",
+            "label": "Color Option 2",
+            "default": "#FFFFFF"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Explore Our Bestsellers",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}
