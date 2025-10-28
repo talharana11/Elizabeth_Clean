@@ -4,8 +4,8 @@
   </div>
   <div class="flex flex-wrap m-4">
     {% for product in collections.bestsellers.products %}
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
+      <div class="w-full p-4 lg:w-1/4 md:w-1/2">
+        <a class="relative block h-48 overflow-hidden rounded">
           <img
             src="{{ product.featured_image | image_url: width: 320 }}"
             alt="{{ product.title }}"
@@ -13,22 +13,22 @@
             height=""
             class="w-full h-[350px] object-cover" />
         </a>
-        <div class="mt-4 flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center mt-4">
           <div class="flex gap-2 py-2">
-            <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-            <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+            <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+            <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
           </div>
-          <h1 class="text-white text-xl tracking-widest title-font">{{ product.title }}</h1>
+          <h1 class="text-xl tracking-widest text-white title-font">{{ product.title }}</h1>
           <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ product.vendor }}</h3>
           <div class="flex gap-4 py-1">
-            <span class="flex text-yellow-400 text-sm">
+            <span class="flex text-sm text-yellow-400">
               {% for i in (1..5) %}
                 {% render 'icon-star' %}
               {% endfor %}
             </span>
             <p class="text-[16px] text-white">{{ product.reviews_count }} Reviews</p>
           </div>
-          <p class="mt-1 text-white text-2xl leading-normal">{{ product.price | money }}</p>
+          <p class="mt-1 text-2xl leading-normal text-white">{{ product.price | money }}</p>
         </div>
       </div>
     {% endfor %}
@@ -38,14 +38,190 @@
 
 
 
+<section class="bg-[#121212] text-white">
+                                  <div class="py-20 mx-auto max-w-7xl lg:py-24">
+                                    <!-- Top grid -->
+                                    <div class="grid grid-cols-1 gap-14 lg:grid-cols-12">
+                                
+                                      <!-- Left: Newsletter -->
+                                      <div class="lg:col-span-4">
+                                        <h2 class="font-Montserrat font-semibold text-[34px] uppercase leading-[1.1] tracking-tight max-w-[300px]">
+                                          SIGN UP FOR OUR NEWSLETTER AND GET A CHANCE TO WIN €100 SHOPPING CREDIT KL HOME
+                                        </h2>
+                                
+                                        <!-- Newsletter form -->
+                                        {% form 'customer'
+                                          , id: 'NewsletterFooter' %}
+                                          <input
+                                            type="hidden"
+                                            name="contact[tags]"
+                                            value="newsletter">
+                                          <div class="max-w-[330px] mt-8">
+                                            <div class="flex items-center rounded-lg ring-1 ring-white/5">
+                                              <input
+                                                class="w-full bg-transparent px-5 py-4 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-[#FFFFFF] focus:outline-none"
+                                                type="email"
+                                                name="contact[email]"
+                                                required
+                                                placeholder="E-mail address" />
+                                              <button class="inline-flex items-center justify-center w-6 h-6 mr-3 transition rounded-full text-black bg-[#ffffff11]">
+                                                {% render 'icon-chevron-right' %}
+                                              </button>
+                                            </div>
+                                            {% if form.errors %}
+                                              <p class="mt-3 text-sm text-red-400">{{ form.errors | default_errors }}</p>
+                                            {% endif %}
+                                            {% if form.posted_successfully? %}
+                                              <p class="mt-3 text-sm text-emerald-400">Thanks! You’re in.</p>
+                                            {% endif %}
+                                          </div>
+                                        {% endform %}
+                                      </div>
+                                
+                                      <!-- Middle: Info links -->
+                                      <div class="lg:col-span-2">
+                                        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white">Info</h3>
+                                        <ul class="space-y-3 text-white/85">
+                                          <li>
+                                            <a href="/pages/cashback" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Cashback</a>
+                                          </li>
+                                          <li>
+                                            <a href="/pages/manuals" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Manuals</a>
+                                          </li>
+                                          <li>
+                                            <a href="/policies/privacy-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Privacy policy</a>
+                                          </li>
+                                          <li>
+                                            <a href="/policies/shipping-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Shipping policy</a>
+                                          </li>
+                                          <li>
+                                            <a href="/policies/refund-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Return policy</a>
+                                          </li>
+                                          <li>
+                                            <a href="/policies/terms-of-service" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Terms and Conditions</a>
+                                          </li>
+                                          <li>
+                                            <a href="/pages/contact" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Contact</a>
+                                          </li>
+                                          <li>
+                                            <a href="/pages/privacy-choices" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">Your privacy choices</a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                
+                                      <!-- Opening hours -->
+                                      <div class="lg:col-span-3">
+                                        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white">Opening hours</h3>
+                                        <ul class="space-y-2 text-white/85">
+                                          <li>
+                                            <span class="font-Montserrat font-bold size-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Monday - Friday:</span>
+                                            <span class="-ml-1 font-Montserrat font-normal size-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 22:00</span>
+                                          </li>
+                                          <li>
+                                            <span class="font-Montserrat font-bold size-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Saturday:</span>
+                                            <span class="-ml-1 font-Montserrat font-normal size-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 20:00</span>
+                                          </li>
+                                          <li>
+                                            <span class="font-Montserrat font-bold size-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Sunday:</span>
+                                            <span class="-ml-1 font-Montserrat font-normal size-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 20:00</span>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                
+                                      <!-- Contact -->
+                                      <div class="lg:col-span-3">
+                                        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white">Contact</h3>
+                                        <div class="space-y-2 text-white/85">
+                                          <p>
+                                            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">WWW.KLHOME.NL</span>
+                                          </p>
+                                          <p>
+                                            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">E-MAIL:</span>
+                                            <a href="mailto:info@klhome.nl" class="font-Montserrat font-normal size-[16px] leading-[1.5] tracking-normal text-white/60">info@klhome.nl</a>
+                                          </p>
+                                          <p>
+                                            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">Amsterdam, Netherlands</span>
+                                          </p>
+                                        </div>
+                                        <p class="mt-8 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60">
+                                          Our team usually answers your questions within 24 hours
+                                        </p>
+                                      </div>
+                                    </div>
+                                
+                                    <!-- Bottom: locale & copyright & payment icons -->
+                                    <div class="pt-6 mt-14">
+                                      <div class="flex flex-col gap-6 md:flex-row">
+                                
+                                        <!-- Localization -->
+                                        <div class="flex flex-wrap items-center gap-6">
+                                          {% form 'localization'
+                                            , id: 'FooterLocalization' %}
+                                            {% if localization.available_countries.size > 1 %}
+                                              <div>
+                                                <label for="FooterCountry" class="sr-only">Country</label>
+                                                <select
+                                                  id="FooterCountry"
+                                                  name="country_code"
+                                                  class="px-3 py-2 bg-transparent rounded-lg ring-1 ring-white/10">
+                                                  {% for country in localization.available_countries %}
+                                                    <option
+                                                      value="{{ country.iso_code }}"
+                                                      {% if country.iso_code == localization.country.iso_code %}
+                                                      selected{% endif %}>
+                                                      {{ country.name }} ({{ country.currency.symbol }} {{ country.currency.iso_code }})
+                                                    </option>
+                                                  {% endfor %}
+                                                </select>
+                                              </div>
+                                            {% endif %}
+                                
+                                            {% if localization.available_languages.size > 1 %}
+                                              <div>
+                                                <label for="FooterLanguage" class="sr-only">Language</label>
+                                                <select
+                                                  id="FooterLanguage"
+                                                  name="locale_code"
+                                                  class="px-3 py-2 bg-transparent rounded-lg ring-1 ring-white/10">
+                                                  {% for language in localization.available_languages %}
+                                                    <option
+                                                      value="{{ language.iso_code }}"
+                                                      {% if language.iso_code == localization.language.iso_code %}
+                                                      selected{% endif %}>
+                                                      {{ language.endonym_name | capitalize }}
+                                                    </option>
+                                                  {% endfor %}
+                                                </select>
+                                              </div>
+                                            {% endif %}
+                                          {% endform %}
+                                        </div>
+                                
+                                        <!-- Copyright -->
+                                        <p class="text-white/60">&copy; {{ 'now' | date: "%Y" }}, KL Home</p>
+                                
+                                        <!-- Payment icons -->
+                                        <div class="flex flex-wrap items-center gap-2">
+                                          {% for type in shop.enabled_payment_types %}
+                                            {{ type | payment_type_svg_tag: class: 'h-6 w-auto opacity-90' }}
+                                          {% endfor %}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+</section>
+
+
+
+
 
 <div class="container mx-auto mt-10">
   <div class="w-full">
     <h1 class="text-white text-[40px] font-light font-['Times_New_Roman'] mb-10">Our Bestsellers</h1>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 m-4">
+  <div class="grid grid-cols-1 m-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9">
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-1.png' | asset_url }}"
           alt="ecommerce"
@@ -53,26 +229,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">LED Cube Wall Lamp</h1>
+        <h1 class="text-xl tracking-widest text-white">LED Cube Wall Lamp</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-2.png' | asset_url }}"
           alt="ecommerce"
@@ -80,26 +256,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h1 class="text-xl tracking-widest text-white">ACHTERGROUND</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-3.png' | asset_url }}"
           alt="ecommerce"
@@ -107,26 +283,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h1 class="text-xl tracking-widest text-white">TABLE LAMP</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-4.png' | asset_url }}"
           alt="ecommerce"
@@ -134,26 +310,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h1 class="text-xl tracking-widest text-white">TABLE LAMP</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-1.png' | asset_url }}"
           alt="ecommerce"
@@ -161,26 +337,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h1 class="text-xl tracking-widest text-white">ACHTERGROUND</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-2.png' | asset_url }}"
           alt="ecommerce"
@@ -188,26 +364,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">ACHTERGROUND</h1>
+        <h1 class="text-xl tracking-widest text-white">ACHTERGROUND</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Bedside Groot Wit</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-3.png' | asset_url }}"
           alt="ecommerce"
@@ -215,26 +391,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">TABLE LAMP</h1>
+        <h1 class="text-xl tracking-widest text-white">TABLE LAMP</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ 'light-4.png' | asset_url }}"
           alt="ecommerce"
@@ -242,22 +418,22 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">TABLE Lamp</h1>
+        <h1 class="text-xl tracking-widest text-white">TABLE Lamp</h1>
         <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">Wit Achterground</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
           <p class="text-[16px] text-white">17 Reviews</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">$79.00</p>
+        <p class="mt-1 text-2xl font-bold leading-normal text-white">$79.00</p>
       </div>
     </div>
   </div>
@@ -268,14 +444,14 @@
 <div class="container px-4 py-40 mx-auto">
                       <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                         <div class="w-full bg-white">
-                          <div class="flex flex-col justify-center items-center py-14">
+                          <div class="flex flex-col items-center justify-center py-14">
                             <h1 class="font-Montserrat font-medium text-[18px] ">Excellent</h1>
                             <span class="flex text-green-700 text-[100px]">
                               {% for i in (1..5) %}
                                 {% render 'icon-star' %}
                               {% endfor %}
                             </span>
-                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Based on
+                            <h2 class="text-sm font-medium tracking-wider text-gray-900 title-font">Based on
                               <span>456 reviews</span>
                             </h2>
                             <div class="flex justify-center">
@@ -284,7 +460,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="w-full lg:mb-0 mb-6 p-4">
+                        <div class="w-full p-4 mb-6 lg:mb-0">
                           <div class="text-center bg-white">
                             <span class="flex text-green-700">
                               {% for i in (1..5) %}
@@ -292,12 +468,12 @@
                               {% endfor %}
                             </span>
                             <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">ALPER KAMU</h2>
+                            <span class="inline-block w-10 h-1 mt-6 mb-4 bg-indigo-500 rounded"></span>
+                            <h2 class="text-sm font-medium tracking-wider text-gray-900 title-font">ALPER KAMU</h2>
                             <p class="text-gray-500">UI Develeoper</p>
                           </div>
                         </div>
-                        <div class="w-full lg:mb-0 p-4">
+                        <div class="w-full p-4 lg:mb-0">
                           <div class="text-center bg-white">
                             <span class="flex text-green-700">
                               {% for i in (1..5) %}
@@ -305,12 +481,12 @@
                               {% endfor %}
                             </span>
                             <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
+                            <span class="inline-block w-10 h-1 mt-6 mb-4 bg-indigo-500 rounded"></span>
+                            <h2 class="text-sm font-medium tracking-wider text-gray-900 title-font">HENRY LETHAM</h2>
                             <p class="text-gray-500">CTO</p>
                           </div>
                         </div>
-                        <div class="w-full lg:mb-0 p-4">
+                        <div class="w-full p-4 lg:mb-0">
                           <div class="text-center bg-white">
                             <span class="flex text-green-700">
                               {% for i in (1..5) %}
@@ -318,8 +494,8 @@
                               {% endfor %}
                             </span>
                             <p class="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                            <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                            <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">HENRY LETHAM</h2>
+                            <span class="inline-block w-10 h-1 mt-6 mb-4 bg-indigo-500 rounded"></span>
+                            <h2 class="text-sm font-medium tracking-wider text-gray-900 title-font">HENRY LETHAM</h2>
                             <p class="text-gray-500">CTO</p>
                           </div>
                         </div>
@@ -333,11 +509,11 @@
     <!-- Slider Container -->
     <div class="relative w-full">
       <!-- Navigation Arrows -->
-      <button class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white border-2 border-white  p-3 rounded-full shadow-lg -ml-20">
+      <button class="absolute left-0 z-10 p-3 -ml-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-lg top-1/2">
         {% render 'icon-chevron-left' %}
       </button>
 
-      <button class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black text-white border-2 border-white p-3 rounded-full shadow-lg -mr-20">
+      <button class="absolute right-0 z-10 p-3 -mr-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-lg top-1/2">
         {% render 'icon-chevron-right' %}
       </button>
 
@@ -345,102 +521,102 @@
       <div class="overflow-hidden">
         <div class="flex gap-4 transition-transform duration-300 ease-in-out">
           <!-- 1 - Rating Summary -->
-          <div class="w-full bg-white p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex flex-col justify-center items-center py-6 space-y-3">
+          <div class="flex-shrink-0 w-full p-6 bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex flex-col items-center justify-center py-6 space-y-3">
               <h1 class="font-Montserrat text-[18px] font-medium text-black leading-[1.44]">Excellent</h1>
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
-              <h2 class="text-gray-900 text-sm font-medium tracking-wide">
+              <h2 class="text-sm font-medium tracking-wide text-gray-900">
                 Based on
                 <span class="underline decoration-1 decoration-gray-900">456 reviews</span>
               </h2>
-              <div class="flex justify-center items-center space-x-1">
+              <div class="flex items-center justify-center space-x-1">
                 <div class="text-green-700">★</div>
-                <p class="text-gray-900 text-sm font-medium">Trustpilot</p>
+                <p class="text-sm font-medium text-gray-900">Trustpilot</p>
               </div>
             </div>
           </div>
 
           <!-- 2 - Review Card -->
-          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex justify-between items-start mb-3">
+          <div class="flex-shrink-0 w-full p-6 text-black bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex items-start justify-between mb-3">
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
               <p class="text-sm text-black">2 days ago</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
-            <p class="leading-relaxed text-black text-sm mb-4">
+            <h3 class="mb-2 text-lg font-semibold">Best on the market</h3>
+            <p class="mb-4 text-sm leading-relaxed text-black">
               I love this product because the support is great. Please ...
             </p>
-            <p class="font-semibold text-sm">Worldtraveler</p>
+            <p class="text-sm font-semibold">Worldtraveler</p>
           </div>
 
           <!-- 3 - Review Card -->
-          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex justify-between items-start mb-3">
+          <div class="flex-shrink-0 w-full p-6 text-black bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex items-start justify-between mb-3">
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
               <p class="text-sm text-black">2 days ago</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
-            <p class="leading-relaxed text-black text-sm mb-4">
+            <h3 class="mb-2 text-lg font-semibold">Best on the market</h3>
+            <p class="mb-4 text-sm leading-relaxed text-black">
               I love this product because the support is great. Please ...
             </p>
-            <p class="font-semibold text-sm">Worldtraveler</p>
+            <p class="text-sm font-semibold">Worldtraveler</p>
           </div>
 
           <!-- 4 - Review Card -->
-          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex justify-between items-start mb-3">
+          <div class="flex-shrink-0 w-full p-6 text-black bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex items-start justify-between mb-3">
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
               <p class="text-sm text-black">2 days ago</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Best on the market</h3>
-            <p class="leading-relaxed text-black text-sm mb-4">
+            <h3 class="mb-2 text-lg font-semibold">Best on the market</h3>
+            <p class="mb-4 text-sm leading-relaxed text-black">
               I love this product because the support is great. Please ...
             </p>
-            <p class="font-semibold text-sm">Worldtraveler</p>
+            <p class="text-sm font-semibold">Worldtraveler</p>
           </div>
 
           <!-- 5 - Additional Review Card -->
-          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex justify-between items-start mb-3">
+          <div class="flex-shrink-0 w-full p-6 text-black bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex items-start justify-between mb-3">
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
               <p class="text-sm text-black">3 days ago</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Amazing Quality</h3>
-            <p class="leading-relaxed text-black text-sm mb-4">
+            <h3 class="mb-2 text-lg font-semibold">Amazing Quality</h3>
+            <p class="mb-4 text-sm leading-relaxed text-black">
               The quality exceeded my expectations. Will definitely buy again!
             </p>
-            <p class="font-semibold text-sm">HappyCustomer</p>
+            <p class="text-sm font-semibold">HappyCustomer</p>
           </div>
 
           <!-- 6 - Additional Review Card -->
-          <div class="w-full bg-white text-black p-6 shadow-xl flex-shrink-0" style="width: calc(25% - 12px);">
-            <div class="flex justify-between items-start mb-3">
+          <div class="flex-shrink-0 w-full p-6 text-black bg-white shadow-xl" style="width: calc(25% - 12px);">
+            <div class="flex items-start justify-between mb-3">
               <span class="flex text-green-700">
                   <!-- Star icons would go here -->
                 ★★★★★
               </span>
               <p class="text-sm text-black">4 days ago</p>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Fast Delivery</h3>
-            <p class="leading-relaxed text-black text-sm mb-4">
+            <h3 class="mb-2 text-lg font-semibold">Fast Delivery</h3>
+            <p class="mb-4 text-sm leading-relaxed text-black">
               Received my order much faster than expected. Very satisfied!
             </p>
-            <p class="font-semibold text-sm">SatisfiedUser</p>
+            <p class="text-sm font-semibold">SatisfiedUser</p>
           </div>
 
         </div>
@@ -450,13 +626,13 @@
 </div>
 
 
-{% comment %} <div class="container px-6 py-24 mx-auto">
+<div class="container px-6 py-24 mx-auto">
                                                                                           <div class="flex items-center justify-center">
                                                                                             <!-- Slider Container -->
                                                                                             <div class="relative w-full max-w-6xl">
                                                                                               <!-- Navigation Arrows -->
                                                                                               <button id="prev-button"
-                                                                                                class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 border-2 border-white rounded-full shadow-xl -ml-20"
+                                                                                                class="absolute left-0 z-20 p-3 -ml-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-xl top-1/2"
                                                                                                 aria-label="Previous Review">
                                                                                                 {% render 'icon-chevron-left' %}
                                                                                               </button>
@@ -465,133 +641,133 @@
                                                                                               <div class="overflow-hidden">
                                                                                                 <div id="cards-container" class="flex gap-6 slider-track">
                                                                                                   <!-- 1 - Rating Summary -->
-                                                                                                  <div class="review-card p-6 bg-white shadow-md">
-                                                                                                    <div class="flex flex-col justify-center items-center py-6 space-y-3">
+                                                                                                  <div class="p-6 bg-white shadow-md review-card">
+                                                                                                    <div class="flex flex-col items-center justify-center py-6 space-y-3">
                                                                                                       <h1 class="font-Montserrat text-xl font-bold text-black leading-[1.44]">Excellent</h1>
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
-                                                                                                      <h2 class="text-gray-900 text-sm font-medium tracking-wide">
+                                                                                                      <h2 class="text-sm font-medium tracking-wide text-gray-900">
                                                                                                         Based on
-                                                                                                        <span class="underline decoration-2 decoration-black font-bold">456 reviews</span>
+                                                                                                        <span class="font-bold underline decoration-2 decoration-black">456 reviews</span>
                                                                                                       </h2>
-                                                                                                      <div class="flex justify-center items-center space-x-1 mt-2">
+                                                                                                      <div class="flex items-center justify-center mt-2 space-x-1">
                                                                                                         <span class="text-green-600">
                                                                                                           {% render 'icon-star' %}
                                                                                                         </span>
-                                                                                                        <p class="text-gray-900 text-sm font-semibold">Trust Score</p>
+                                                                                                        <p class="text-sm font-semibold text-gray-900">Trust Score</p>
                                                                                                       </div>
                                                                                                     </div>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 2 - Review Card -->
-                                                                                                  <div class="review-card bg-white text-black p-6 shadow-md flex-shrink-0 xl:p-3">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-black bg-white shadow-md review-card xl:p-3">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">2 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Simply the best!</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Simply the best!</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       I love this product because the support is great. The quality is unmatched in this price range, and it
                                                                                                       arrived faster than I expected. Highly recommend!
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-black">Alex R.</p>
+                                                                                                    <p class="text-sm font-semibold text-black">Alex R.</p>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 3 - Review Card -->
-                                                                                                  <div class="review-card bg-white text-black p-6 shadow-md flex-shrink-0 xl:p-3">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-black bg-white shadow-md review-card xl:p-3">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">2 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Outstanding Service</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Outstanding Service</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       The team went above and beyond to help me with my order. Flawless experience from start to finish. I will
                                                                                                       definitely be a repeat customer.
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-gray-900">Maria S.</p>
+                                                                                                    <p class="text-sm font-semibold text-gray-900">Maria S.</p>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 4 - Review Card -->
-                                                                                                  <div class="review-card bg-white text-gray-800 p-6 flex-shrink-0">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-gray-800 bg-white review-card">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">3 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Great Value!</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Great Value!</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       Couldn't be happier with my purchase. The quality-to-price ratio is fantastic. You won't find a better
                                                                                                       deal anywhere else.
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-black">Jordan L.</p>
+                                                                                                    <p class="text-sm font-semibold text-black">Jordan L.</p>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 5 - Additional Review Card -->
-                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-black bg-white review-card">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">3 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Amazing Quality</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Amazing Quality</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       The quality exceeded my expectations. The packaging was secure, and everything worked perfectly right out
                                                                                                       of the box. Will definitely buy again!
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-black">HappyCustomer</p>
+                                                                                                    <p class="text-sm font-semibold text-black">HappyCustomer</p>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 6 - Additional Review Card -->
-                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-black bg-white review-card">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">4 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Fast Delivery</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Fast Delivery</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       Received my order much faster than expected. The tracking updates were very accurate. Very satisfied with
                                                                                                       the logistics!
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-black">SatisfiedUser</p>
+                                                                                                    <p class="text-sm font-semibold text-black">SatisfiedUser</p>
                                                                                                   </div>
                                                                                         
                                                                                                   <!-- 7 - Final Review Card -->
-                                                                                                  <div class="review-card bg-white text-black p-6 flex-shrink-0">
-                                                                                                    <div class="flex justify-between items-start mb-3">
-                                                                                                      <span class="flex text-green-600 text-2xl tracking-widest">
+                                                                                                  <div class="flex-shrink-0 p-6 text-black bg-white review-card">
+                                                                                                    <div class="flex items-start justify-between mb-3">
+                                                                                                      <span class="flex text-2xl tracking-widest text-green-600">
                                                                                                         {% for i in (1..5) %}
                                                                                                         {% render 'icon-star' %}
                                                                                                         {% endfor %}
                                                                                                       </span>
                                                                                                       <p class="text-sm text-black">5 days ago</p>
                                                                                                     </div>
-                                                                                                    <h3 class="text-xl font-bold mb-2 text-black">Highly Recommended</h3>
-                                                                                                    <p class="leading-relaxed text-black text-base mb-4 line-clamp-3">
+                                                                                                    <h3 class="mb-2 text-xl font-bold text-black">Highly Recommended</h3>
+                                                                                                    <p class="mb-4 text-base leading-relaxed text-black line-clamp-3">
                                                                                                       A friend recommended this product, and I'm so glad they did. It's a game-changer! Don't hesitate to
                                                                                                       purchase.
                                                                                                     </p>
-                                                                                                    <p class="font-semibold text-sm text-black">ReviewGuru</p>
+                                                                                                    <p class="text-sm font-semibold text-black">ReviewGuru</p>
                                                                                                   </div>
                                                                                         
                                                                                                 </div>
@@ -599,14 +775,14 @@
                                                                                         
                                                                                               <div class="flex justify-center gap-4 mt-6 md:hidden">
                                                                                                 <button id="prev-button-mobile"
-                                                                                                  class="bg-black/80 text-white p-3 rounded-full shadow-xl transition hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed"
+                                                                                                  class="p-3 text-white transition rounded-full shadow-xl bg-black/80 hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed"
                                                                                                   aria-label="Previous Review">
                                                                                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                                                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                                                     <polyline points="15 18 9 12 15 6"></polyline>
                                                                                                   </svg>
                                                                                                 </button>
-                                                                                                <button id="next-button-mobile" class="bg-black text-white p-3 rounded-full shadow-xl transition "
+                                                                                                <button id="next-button-mobile" class="p-3 text-white transition bg-black rounded-full shadow-xl "
                                                                                                   aria-label="Next >Review">
                                                                                                   {% render 'icon-chevron-right' %}
                                                                                                 </button>
@@ -614,14 +790,14 @@
                                                                                         
                                                                                         
                                                                                               <button id="next-button"
-                                                                                                class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 rounded-full shadow-xl border-2 border-white -mr-20"
+                                                                                                class="absolute right-0 z-20 p-3 -mr-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-xl top-1/2"
                                                                                                 aria-label="Next Review">
                                                                                                 {% render 'icon-chevron-right' %}
                                                                                               </button>
                                                                                             </div>
                                                                                           </div>
-</div> {% endcomment %}
-{% comment %} <script>
+</div>
+<script>
                                                                                           // Constants and DOM Elements
                                                                                           const cardsContainer = document.getElementById('cards-container');
                                                                                           const prevButton = document.getElementById('prev-button');
@@ -725,14 +901,18 @@
                                                                                         
                                                                                           // Initial call to set up the slider correctly on load
                                                                                           updateSlider();
-</script> {% endcomment %}
-{% comment %} <div class="container px-6 py-24 mx-auto">
+</script> 
+
+
+
+
+<div class="container px-6 py-24 mx-auto">
                                                                                         <div class="flex items-center justify-center"> 
                                                                                         <!-- Slider Container --> 
                                                                                         <div class="relative w-full max-w-[1200px]"> 
                                                                                         <!-- Navigation Arrows --> 
                                                                                         <button id="prev-button" 
-                                                                                        class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 border-2 border-white rounded-full shadow-xl -ml-20 hidden md:block" 
+                                                                                        class="absolute left-0 z-20 hidden p-3 -ml-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-xl top-1/2 md:block" 
                                                                                         aria-label="Previous Review"> 
                                                                                         {% render 'icon-chevron-left' %} 
                                                                                         </button> 
@@ -741,108 +921,108 @@
                                                                                         <div id="cards-container" class="flex gap-4 transition-transform duration-300"> 
                                                                                         <!-- 1 - Rating Summary --> 
                                                                                         <div class="p-6 bg-white shadow-md min-w-[300px]"> 
-                                                                                        <div class="flex flex-col justify-center items-center py-6 space-y-3"> 
+                                                                                        <div class="flex flex-col items-center justify-center py-6 space-y-3"> 
                                                                                         <h1 class="font-bold text-xl text-black leading-[1.44]">Excellent</h1> 
-                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        <span class="flex text-2xl tracking-widest text-green-600"> 
                                                                                         {% for i in (1..5) %} 
                                                                                         {% render 'icon-star' %} 
                                                                                         {% endfor %} 
                                                                                         </span> 
-                                                                                        <h2 class="text-gray-900 text-sm font-medium tracking-wide"> 
+                                                                                        <h2 class="text-sm font-medium tracking-wide text-gray-900"> 
                                                                                         Based on 
-                                                                                        <span class="underline decoration-2 decoration-black font-bold">456 reviews</span> 
+                                                                                        <span class="font-bold underline decoration-2 decoration-black">456 reviews</span> 
                                                                                         </h2> 
-                                                                                        <div class="flex justify-center items-center space-x-1 mt-2"> 
+                                                                                        <div class="flex items-center justify-center mt-2 space-x-1"> 
                                                                                         <span class="text-green-600"> 
                                                                                         <i class="fas fa-star"></i> 
                                                                                         </span> 
-                                                                                        <p class="text-gray-900 text-sm font-semibold">Trust Score</p> 
+                                                                                        <p class="text-sm font-semibold text-gray-900">Trust Score</p> 
                                                                                         </div> 
                                                                                         </div> 
                                                                                         </div> 
                                                                                         <!-- 2 - Review Card --> 
                                                                                         <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
-                                                                                        <div class="flex justify-between items-start mb-3"> 
-                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        <div class="flex items-start justify-between mb-3"> 
+                                                                                        <span class="flex text-2xl tracking-widest text-green-600"> 
                                                                                         {% for i in (1..5) %} 
                                                                                         {% render 'icon-star' %} 
                                                                                         {% endfor %} 
                                                                                         </span> 
                                                                                         <p class="text-sm text-black">2 days ago</p> 
                                                                                         </div> 
-                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
-                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        <h3 class="mb-2 text-xl font-bold text-black">Best on the market</h3> 
+                                                                                        <p class="mb-4 overflow-hidden text-base leading-relaxed text-black" 
                                                                                         style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
                                                                                         I love this product because the support is great. Please ... 
                                                                                         </p> 
-                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        <p class="text-sm font-semibold text-black">Worldtraveler</p> 
                                                                                         </div> 
                                                                                         <!-- 3 - Review Card --> 
                                                                                         <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
-                                                                                        <div class="flex justify-between items-start mb-3"> 
-                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        <div class="flex items-start justify-between mb-3"> 
+                                                                                        <span class="flex text-2xl tracking-widest text-green-600"> 
                                                                                         {% for i in (1..5) %} 
                                                                                         {% render 'icon-star' %} 
                                                                                         {% endfor %} 
                                                                                         </span> 
                                                                                         <p class="text-sm text-black">2 days ago</p> 
                                                                                         </div> 
-                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
-                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        <h3 class="mb-2 text-xl font-bold text-black">Best on the market</h3> 
+                                                                                        <p class="mb-4 overflow-hidden text-base leading-relaxed text-black" 
                                                                                         style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
                                                                                         I love this product because the support is great. Please ... 
                                                                                         </p> 
-                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        <p class="text-sm font-semibold text-black">Worldtraveler</p> 
                                                                                         </div> 
                                                                                         <!-- 4 - Review Card --> 
                                                                                         <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
-                                                                                        <div class="flex justify-between items-start mb-3"> 
-                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        <div class="flex items-start justify-between mb-3"> 
+                                                                                        <span class="flex text-2xl tracking-widest text-green-600"> 
                                                                                         {% for i in (1..5) %} 
                                                                                         {% render 'icon-star' %} 
                                                                                         {% endfor %} 
                                                                                         </span> 
                                                                                         <p class="text-sm text-black">2 days ago</p> 
                                                                                         </div> 
-                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
-                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        <h3 class="mb-2 text-xl font-bold text-black">Best on the market</h3> 
+                                                                                        <p class="mb-4 overflow-hidden text-base leading-relaxed text-black" 
                                                                                         style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
                                                                                         I love this product because the support is great. Please ... 
                                                                                         </p> 
-                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        <p class="text-sm font-semibold text-black">Worldtraveler</p> 
                                                                                         </div> 
                                                                                         <!-- 5 - Review Card --> 
                                                                                         <div class="bg-white text-black p-6 shadow-md min-w-[300px]"> 
-                                                                                        <div class="flex justify-between items-start mb-3"> 
-                                                                                        <span class="flex text-green-600 text-2xl tracking-widest"> 
+                                                                                        <div class="flex items-start justify-between mb-3"> 
+                                                                                        <span class="flex text-2xl tracking-widest text-green-600"> 
                                                                                         {% for i in (1..5) %} 
                                                                                         {% render 'icon-star' %} 
                                                                                         {% endfor %} 
                                                                                         </span> 
                                                                                         <p class="text-sm text-black">2 days ago</p> 
                                                                                         </div> 
-                                                                                        <h3 class="text-xl font-bold mb-2 text-black">Best on the market</h3> 
-                                                                                        <p class="leading-relaxed text-black text-base mb-4 overflow-hidden" 
+                                                                                        <h3 class="mb-2 text-xl font-bold text-black">Best on the market</h3> 
+                                                                                        <p class="mb-4 overflow-hidden text-base leading-relaxed text-black" 
                                                                                         style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"> 
                                                                                         I love this product because the support is great. Please ... 
                                                                                         </p> 
-                                                                                        <p class="font-semibold text-sm text-black">Worldtraveler</p> 
+                                                                                        <p class="text-sm font-semibold text-black">Worldtraveler</p> 
                                                                                         </div> 
                                                                                         </div> 
                                                                                         </div> 
                                                                                         <div class="flex justify-center gap-4 mt-6 md:hidden"> 
                                                                                         <button id="prev-button-mobile" 
-                                                                                        class="bg-black/80 text-white p-3 rounded-full shadow-xl transition hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed" 
+                                                                                        class="p-3 text-white transition rounded-full shadow-xl bg-black/80 hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed" 
                                                                                         aria-label="Previous Review"> 
                                                                                         {% render 'icon-chevron-left' %} 
                                                                                         </button> 
                                                                                         <button id="next-button-mobile" 
-                                                                                        class="bg-black text-white p-3 rounded-full shadow-xl transition hover:bg-black/80" aria-label="Next Review"> 
+                                                                                        class="p-3 text-white transition bg-black rounded-full shadow-xl hover:bg-black/80" aria-label="Next Review"> 
                                                                                         {% render 'icon-chevron-right' %} 
                                                                                         </button> 
                                                                                         </div> 
                                                                                         <button id="next-button" 
-                                                                                        class="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-black text-white p-3 rounded-full shadow-xl border-2 border-white -mr-20 hidden md:block" 
+                                                                                        class="absolute right-0 z-20 hidden p-3 -mr-20 text-white transform -translate-y-1/2 bg-black border-2 border-white rounded-full shadow-xl top-1/2 md:block" 
                                                                                         aria-label="Next Review"> 
                                                                                         {% render 'icon-chevron-right' %} 
                                                                                         </button> 
@@ -891,26 +1071,29 @@
                                                                                         updateButtons();
                                                                                         });
                                                                                         </script>
-{% endcomment %}
-{% comment %} <div class="container mx-auto px-6 py-18">
+
+
+
+
+<div class="container px-6 mx-auto py-18">
                                                                       <div class="relative">
                                                                         <!-- Swiper Container -->
                                                                         <div class="swiper myReviewSwiper">
                                                                           <div class="swiper-wrapper">
                                                                     
                                                                             <!-- Rating Summary Card -->
-                                                                            <div class="swiper-slide flex justify-center">
+                                                                            <div class="flex justify-center swiper-slide">
                                                                               <div class="bg-white w-[300px] md:w-[340px] h-[240px] flex flex-col items-center justify-center text-center p-6 rounded-lg shadow-md">
-                                                                                <h3 class="text-xl font-semibold mb-3 text-black">Excellent</h3>
+                                                                                <h3 class="mb-3 text-xl font-semibold text-black">Excellent</h3>
                                                                                 <div class="flex mb-2 text-green-600">
                                                                                   {% for i in (1..5) %}
                                                                                     {% render 'icon-star' %}{% endfor %}
                                                                                 </div>
                                                                                 <p class="text-sm text-gray-800">
                                                                                   Based on
-                                                                                  <span class="underline font-bold">456 reviews</span>
+                                                                                  <span class="font-bold underline">456 reviews</span>
                                                                                 </p>
-                                                                                <div class="flex items-center justify-center gap-1 mt-2 text-green-600 font-semibold">
+                                                                                <div class="flex items-center justify-center gap-1 mt-2 font-semibold text-green-600">
                                                                                   {% render 'icon-star' %}
                                                                                   <span class="text-black">Trustpilot</span>
                                                                                 </div>
@@ -918,62 +1101,62 @@
                                                                             </div>
                                                                     
                                                                             <!-- Review Card 1 -->
-                                                                            <div class="swiper-slide flex justify-center">
+                                                                            <div class="flex justify-center swiper-slide">
                                                                               <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
                                                                                 <div>
-                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                  <div class="flex items-center justify-between mb-2">
                                                                                     <div class="flex text-green-600">
                                                                                       {% for i in (1..5) %}
                                                                                         {% render 'icon-star' %}{% endfor %}
                                                                                     </div>
                                                                                     <p class="text-xs text-gray-700">2 days ago</p>
                                                                                   </div>
-                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
-                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                  <h4 class="mb-1 text-lg font-semibold text-black">Best on the market</h4>
+                                                                                  <p class="text-sm leading-snug text-gray-800">
                                                                                     I love this product because the support is great. Please keep it up!
                                                                                   </p>
                                                                                 </div>
-                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                                <p class="mt-3 text-sm font-semibold text-black">Worldtraveler</p>
                                                                               </div>
                                                                             </div>
                                                                     
                                                                             <!-- Review Card 2 -->
-                                                                            <div class="swiper-slide flex justify-center">
+                                                                            <div class="flex justify-center swiper-slide">
                                                                               <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
                                                                                 <div>
-                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                  <div class="flex items-center justify-between mb-2">
                                                                                     <div class="flex text-green-600">
                                                                                       {% for i in (1..5) %}
                                                                                         {% render 'icon-star' %}{% endfor %}
                                                                                     </div>
                                                                                     <p class="text-xs text-gray-700">2 days ago</p>
                                                                                   </div>
-                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
-                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                  <h4 class="mb-1 text-lg font-semibold text-black">Best on the market</h4>
+                                                                                  <p class="text-sm leading-snug text-gray-800">
                                                                                     I love this product because the support is great. Please keep it up!
                                                                                   </p>
                                                                                 </div>
-                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                                <p class="mt-3 text-sm font-semibold text-black">Worldtraveler</p>
                                                                               </div>
                                                                             </div>
                                                                     
                                                                             <!-- Review Card 3 -->
-                                                                            <div class="swiper-slide flex justify-center">
+                                                                            <div class="flex justify-center swiper-slide">
                                                                               <div class="bg-white w-[300px] md:w-[340px] h-[240px] p-6 rounded-lg shadow-md flex flex-col justify-between">
                                                                                 <div>
-                                                                                  <div class="flex justify-between items-center mb-2">
+                                                                                  <div class="flex items-center justify-between mb-2">
                                                                                     <div class="flex text-green-600">
                                                                                       {% for i in (1..5) %}
                                                                                         {% render 'icon-star' %}{% endfor %}
                                                                                     </div>
                                                                                     <p class="text-xs text-gray-700">2 days ago</p>
                                                                                   </div>
-                                                                                  <h4 class="font-semibold text-lg mb-1 text-black">Best on the market</h4>
-                                                                                  <p class="text-sm text-gray-800 leading-snug">
+                                                                                  <h4 class="mb-1 text-lg font-semibold text-black">Best on the market</h4>
+                                                                                  <p class="text-sm leading-snug text-gray-800">
                                                                                     I love this product because the support is great. Please keep it up!
                                                                                   </p>
                                                                                 </div>
-                                                                                <p class="text-sm font-semibold mt-3 text-black">Worldtraveler</p>
+                                                                                <p class="mt-3 text-sm font-semibold text-black">Worldtraveler</p>
                                                                               </div>
                                                                             </div>
                                                                     
@@ -1004,4 +1187,198 @@
                                                                           1024: { slidesPerView: 3, spaceBetween: 24 },
                                                                         },
                                                                       });
-</script> {% endcomment %}
+</script>
+
+{% comment %} <div class="bg-gradient-to-r from-black to-[#221a04]">
+                                                                                                  <div class="max-w-[1440px] mx-auto min-h-screen flex flex-row items-center justify-between py-24 px-6 gap-16">
+                                                                                                
+                                                                                                    <!-- left side - -->
+                                                                                                    <div class="w-[40%] flex justify-center">
+                                                                                                      <img
+                                                                                                        src="{{ 'lamp.png' | asset_url }}"
+                                                                                                        alt="wall lamp"
+                                                                                                        width=""
+                                                                                                        height=""
+                                                                                                        class="object-cover w-full max-w-[500px]" />
+                                                                                                    </div>
+                                                                                                
+                                                                                                    <!-- right side - -->
+                                                                                                    <div class="w-[50%]">
+                                                                                                      <h1 class="font-['Times_New_Roman'] font-normal text-[40px] leading-[1] tracking-normal text-white mb-8">Why should you choose us as your partner</h1>
+                                                                                                
+                                                                                                      <div class="space-y-6">
+                                                                                                        <div x-data="{ open: false}">
+                                                                                                          <div class="flex items-center justify-between w-full mb-4">
+                                                                                                            <h3 class="font-Montserrat font-semibold text-[20px] leading-[1] tracking-normal text-white">Remote Light Control</h3>
+                                                                                                            <div x-on:click="open = ! open">
+                                                                                                              {% render 'icon-dropdown' %}
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                          <div x-show="open" @click.away="open = false">
+                                                                                                            <p class="mt-4 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white">It's easier to control brightness with the remote control lamp, so you don't have to go to the light switch</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+</div> {% endcomment %}
+
+
+{% comment %} <section class="bg-gradient-to-r from-black to-[#221a04]">
+                        <div class="max-w-[1440px] mx-auto min-h-screen flex flex-col lg:flex-row items-center justify-between py-24 px-6 gap-12">
+                      
+                          <!-- Left Image -->
+                          <div class="w-[40%] flex justify-center">
+                            <img
+                              src="{{ 'lamp.png' | asset_url }}"
+                              alt="wall lamp"
+                              width=""
+                              height=""
+                              class="object-cover w-full max-w-[500px]" />
+                          </div>
+                      
+                          <!-- Right Content -->
+                          <div class="w-[50%] text-white">
+                            <h2 class="max-w-[480px] font-['Times_New_Roman'] font-normal text-[40px] leading-[1] tracking-normal text-white mb-10">
+                              Why should you choose us as your partner
+                            </h2>
+                      
+                            <!-- Accordion -->
+                            <div class="space-y-6">
+                      
+                              <!-- Item 1 -->
+                              <div x-data="{ open: true }">
+                                <button class="flex items-center justify-between w-full text-left group" @click="open = !open">
+                                  <span class="font-Montserrat font-semibold text-[20px] leading-[1] tracking-normal text-white">Remote Light Control</span>
+                                  <div :class="open ? 'rotate-180' : 'rotate-0'" class="transition-transform duration-300">
+                                    {% render 'icon-dropdown' %}
+                                  </div>
+                                </button>
+                                <div x-show="open" x-transition>
+                                  <p class="mt-4 max-w-[552px] font-Montserrat font-normal text-[16px] leading-[1.5] tracking-wide text-white">
+                                    It's easier to control brightness with the remote control lamp, so you don't have to go to the light switch.
+                                  </p>
+                                </div>
+                              </div>
+                      
+                              <!-- Item 2 -->
+                              <div x-data="{ open: false }">
+                                <button class="flex items-center justify-between w-full text-left group" @click="open = !open">
+                                  <span class="font-Montserrat font-semibold text-[20px] leading-[1] tracking-normal text-white">Latest and modern design</span>
+                                  <div :class="open ? 'rotate-180' : 'rotate-0'" class="transition-transform duration-300">
+                                    {% render 'icon-dropdown' %}
+                                  </div>
+                                </button>
+                                <div x-show="open" x-transition>
+                                  <p class="mt-4 max-w-[552px] font-Montserrat font-normal text-[16px] leading-[1.5] tracking-wide text-white">
+                                    Our products feature a sleek and modern aesthetic, crafted with precision and contemporary style to enhance your space.
+                                  </p>
+                                </div>
+                              </div>
+                      
+                              <!-- Item 3 -->
+                              <div x-data="{ open: false }">
+                                <button class="flex items-center justify-between w-full text-left group" @click="open = !open">
+                                  <span class="font-Montserrat font-semibold text-[20px] leading-[1] tracking-normal text-white">Saving electricity and quality control</span>
+                                  <div :class="open ? 'rotate-180' : 'rotate-0'" class="transition-transform duration-300">
+                                    {% render 'icon-dropdown' %}
+                                  </div>
+                                </button>
+                                <div x-show="open" x-transition>
+                                  <p class="mt-4 max-w-[552px] font-Montserrat font-normal text-[16px] leading-[1.5] tracking-wide text-white">
+                                    Our lamps are engineered to be energy-efficient while maintaining superior quality and performance.
+                                  </p>
+                                </div>
+                              </div>
+                      
+                            </div>
+                      
+                            <!-- CTA Button -->
+                            <div class="mt-20">
+                              <a href="#" class="inline-block bg-white text-black font-Montserrat font-semibold text-[16px] px-8 py-3 rounded-full shadow hover:bg-neutral-100 transition-all duration-300">
+                                SHOP NOW
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+</section> {% endcomment %}
+
+
+<div class="flex flex-wrap items-center gap-6">
+            {% form 'localization'
+              , id: 'FooterLocalization' %}
+              <div class="relative inline-block">
+                <label for="FooterCountry" class="sr-only">Country</label>
+                <select
+                  id="FooterCountry"
+                  name="country_code"
+                  class="appearance-none pr-8 bg-transparent px-3 py-2 rounded-lg ring-1 ring-white/10 text-white/60 font-Montserrat font-normal text-[15px] leading-[1.5] tracking-normal">
+                  {% if localization.available_countries.size > 1 %}
+                    {% for country in localization.available_countries %}
+                      <option
+                        value="{{ country.iso_code }}"
+                        {% if country.iso_code == localization.country.iso_code %}
+                        selected{% endif %}>
+                        {% if country.iso_code == 'US' %}
+                          United States (USD $)
+                        {% else %}
+                          {{ country.name }} ({{ country.currency.symbol }} {{ country.currency.iso_code }})
+                        {% endif %}
+                      </option>
+                    {% endfor %}
+                  {% else %}
+                    <option value="{{ localization.country.iso_code }}">
+                      United States (USD $)
+                    </option>
+                  {% endif %}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-white/60">
+                  <svg
+                    class="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="relative inline-block">
+                <label for="FooterLanguage" class="sr-only">Language</label>
+                <select
+                  id="FooterLanguage"
+                  name="locale_code"
+                  class="appearance-none pr-8 bg-transparent px-3 py-2 rounded-lg ring-1 ring-white/10 text-white/60 font-Montserrat font-normal text-[15px] leading-[1.5] tracking-normal">
+                  {% if localization.available_languages.size > 1 %}
+                    {% for language in localization.available_languages %}
+                      <option
+                        value="{{ language.iso_code }}"
+                        {% if language.iso_code == localization.language.iso_code %}
+                        selected{% endif %}>
+                        {{ language.endonym_name | capitalize }}
+                      </option>
+                    {% endfor %}
+                  {% else %}
+                    <option value="{{ localization.language.iso_code }}">
+                      English
+                    </option>
+                  {% endif %}
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-white/60">
+                  <svg
+                    class="w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            {% endform %}
+          </div>

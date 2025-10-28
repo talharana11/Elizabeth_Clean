@@ -1,0 +1,100 @@
+<div class="max-w-6xl px-4 py-24 mx-auto bg-black faq-wrapper md:px-10">
+  <h2 class="mb-14 font-['Times_New_Roman'] font-normal text-[40px] leading-[0.7] tracking-normal title-case text-center text-white md:text-4xl">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-3 ">
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="flex items-center justify-between w-full px-6 py-5 text-left rounded-md bg-[#636363CC] faq-question focus:outline-none">
+        <span class="font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] text-white">How long does delivery take?</span>
+        <span>{% render 'icon-plus' %}</span>
+      </button>
+      <div class="overflow-hidden transition-all duration-300 faq-answer max-h-0">
+        <div class="pt-4"></div>
+        <p class="text-white font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] bg-[#636363CC] px-2 py-4 rounded-md md:px-6">
+          Our standard delivery typically takes 3–5 business days, depending on your location.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="flex items-center justify-between w-full px-6 py-5 text-left rounded-md bg-[#636363CC] faq-question focus:outline-none">
+        <span class="font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] text-white">Which delivery service do you use?</span>
+        <span>{% render 'icon-plus' %}</span>
+      </button>
+      <div class="overflow-hidden transition-all duration-300 faq-answer max-h-0">
+        <div class="pt-4"></div>
+        <p class="text-white font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] bg-[#636363CC] px-2 py-4 rounded-md md:px-6">
+          We partner with trusted couriers such as Royal Mail and DPD for reliable nationwide shipping.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="flex items-center justify-between w-full px-6 py-5 text-left rounded-md bg-[#636363CC] faq-question focus:outline-none">
+        <span class="font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] text-white">What warranty policy do we offer?</span>
+        <span>{% render 'icon-plus' %}</span>
+      </button>
+      <div class="overflow-hidden transition-all duration-300 faq-answer max-h-0">
+        <div class="pt-4"></div>
+        <p class="text-white font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] bg-[#636363CC] px-2 py-4 rounded-md md:px-6">
+          All products come with a 12-month warranty covering manufacturing defects and performance issues.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="flex items-center justify-between w-full px-6 py-5 text-left rounded-md bg-[#636363CC] faq-question focus:outline-none">
+        <span class="font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] text-white">How does LED lighting help save energy?</span>
+        <span>{% render 'icon-plus' %}</span>
+      </button>
+      <div class="overflow-hidden transition-all duration-300 faq-answer max-h-0">
+        <div class="pt-4"></div>
+        <p class="text-white font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] bg-[#636363CC] px-2 py-4 rounded-md md:px-6">
+          LED lights use up to 80% less energy than traditional bulbs while offering long-lasting brightness.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item -->
+    <div class="faq-item">
+      <button class="flex items-center justify-between w-full px-6 py-5 text-left rounded-md bg-[#636363CC] faq-question focus:outline-none">
+        <span class="font-Montserrat font-semibold text-[18px] leading-[2] tracking-[1px] text-white">What are the minimum and maximum temperatures that LED light can withstand?</span>
+        <span>{% render 'icon-plus' %}</span>
+      </button>
+      <div class="overflow-hidden transition-all duration-300 faq-answer max-h-0">
+        <div class="pt-4"></div>
+        <p class="text-gray-300 text-[16px] leading-relaxed bg-neutral-800 px-2 py-4 rounded-md md:px-6">
+          Our LED lights can operate safely between -20°C and +45°C without performance loss.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const isActive = answer.classList.contains("active");
+  
+      // Close all open answers
+      document.querySelectorAll(".faq-answer").forEach((ans) => {
+        ans.style.maxHeight = null;
+        ans.classList.remove("active");
+      });
+  
+      // Open clicked one
+      if (!isActive) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.classList.add("active");
+      }
+    });
+  });
+</script>

@@ -1,13 +1,13 @@
 <div class="container mx-auto mt-10">
   <div class="w-full">
-    <h1 class="text-white text-[40px] font-light font-['Times_New_Roman'] mb-10">
+    <h1 class="text-white text-[40px] font-normal font-['Times_New_Roman'] mb-10 leading-[0.8]">
       {{ section.settings.section_title }}
     </h1>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9 m-4">
+  <div class="grid grid-cols-1 m-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-9">
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_1_image | file_url }}"
           alt="ecommerce"
@@ -15,27 +15,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_1_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_1_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_1_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_1_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for j in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_1_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_1_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_1_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_1_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_2_image | file_url }}"
           alt="ecommerce"
@@ -43,27 +43,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_2_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_2_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_2_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_2_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for j in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_2_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_2_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_2_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_2_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_3_image | file_url }}"
           alt="ecommerce"
@@ -71,27 +71,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center mb-10">
+      <div class="flex flex-col items-center justify-center mt-4 mb-10">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_3_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_3_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_3_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_3_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for j in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_3_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_3_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_3_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_3_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_4_image | file_url }}"
           alt="ecommerce"
@@ -99,27 +99,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_4_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_4_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_4_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_4_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for j in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_4_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_4_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_4_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_4_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_5_image | file_url }}"
           alt="ecommerce"
@@ -127,27 +127,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_5_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_5_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_5_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_5_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_5_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_5_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_5_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_5_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_6_image | file_url }}"
           alt="ecommerce"
@@ -155,27 +155,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_6_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_6_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_6_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_6_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_6_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_6_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_6_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_6_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_7_image | file_url }}"
           alt="ecommerce"
@@ -183,27 +183,27 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_7_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_7_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_7_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_7_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_7_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_7_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_7_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_7_price }}</p>
       </div>
     </div>
 
     <div class="w-full">
-      <a class="block relative rounded overflow-hidden">
+      <a class="relative block overflow-hidden rounded">
         <img
           src="{{ section.settings.product_8_image | file_url }}"
           alt="ecommerce"
@@ -211,26 +211,26 @@
           height=""
           class="xl:w-[350px] xl:h-[400px] w-[311px] h-[350px] object-center object-fill">
       </a>
-      <div class="mt-4 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center mt-4">
         <div class="flex gap-2 py-2">
-          <div class="w-5 h-5 bg-black rounded-full border border-white"></div>
-          <div class="w-5 h-5 rounded-full border border-white bg-white"></div>
+          <div class="w-5 h-5 bg-black border border-white rounded-full"></div>
+          <div class="w-5 h-5 bg-white border border-white rounded-full"></div>
         </div>
-        <h1 class="text-white text-xl tracking-widest">{{ section.settings.product_8_title }}</h1>
-        <h3 class="text-[16px] font-semibold font-['Montserrat'] leading-normal py-1 text-[#838383]">{{ section.settings.product_8_description }}</h3>
+        <h1 class="mt-2 font-Montserrat font-bold text-[24px] leading-[1] tracking-wide uppercase text-white">{{ section.settings.product_8_title }}</h1>
+        <h3 class="mt-2 text-[16px] font-semibold font-Montserrat leading-[1] py-1 text-[#838383]">{{ section.settings.product_8_description }}</h3>
         <div class="flex gap-4 py-1">
-          <span class="flex text-yellow-400 text-sm">
+          <span class="flex text-sm text-yellow-400">
             {% for i in (1..5) %}
               {% render 'icon-star' %}
             {% endfor %}
           </span>
-          <p class="text-[16px] text-white">{{ section.settings.product_8_reviews }}</p>
+          <p class="mt-2 font-Montserrat font-semibold text-[16px] leading-[1] text-[#838383]">{{ section.settings.product_8_reviews }}</p>
         </div>
-        <p class="mt-1 text-white text-2xl leading-normal font-bold">{{ section.settings.product_8_price }}</p>
+        <p class="mt-2 font-Montserrat text-[24px] font-bold leading-[1] text-white">{{ section.settings.product_8_price }}</p>
       </div>
     </div>
   </div>
-  <div class="w-full mx-auto flex justify-center mt-10">
+  <div class="flex justify-center w-full mx-auto mt-10">
     <a href="{{ section.settings.view_link }}" class="inline-block rounded font-bold text-[18px] leading-normal uppercase bg-white text-black py-1 px-4">{{ section.settings.view_text }}</a>
   </div>
 </div>

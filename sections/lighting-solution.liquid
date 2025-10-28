@@ -1,10 +1,10 @@
-<div class="container py-24 mx-auto flex gap-12">
+<div class="container flex gap-12 py-24 mx-auto">
   <!-- Left Section with Image -->
   <div class="w-1/2 overflow-hidden">
     <h1 class="text-white font-light text-4xl leading-tight font-['Times_New_Roman'] mb-4">
       {{ section.settings.main_heading }}
     </h1>
-    <div class="border rounded-xl overflow-hidden">
+    <div class="overflow-hidden border rounded-xl">
       <img
         src="{{ section.settings.main_image | file_url }}"
         alt="feature"
@@ -17,7 +17,7 @@
   <!-- Right Section with Text Content -->
   <div class="flex flex-col w-1/2">
     <!-- Elegant Design & Versatility -->
-    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+    <div class="flex flex-col mb-8 lg:flex-row gap-7">
       <div class="flex w-[345px] gap-4 cursor-pointer">
         <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
         <div>
@@ -30,59 +30,59 @@
         </div>
       </div>
       <div class="flex-none w-[165px] h-[150px]">
-        <div class="border rounded-xl overflow-hidden">
+        <div class="overflow-hidden border rounded-xl">
           <img
             src="{{ section.settings.elegant_design_image | file_url }}"
             alt="Light Image"
             width=""
             height=""
-            class="w-full h-full object-contain object-center rounded-xl">
+            class="object-contain object-center w-full h-full rounded-xl">
         </div>
       </div>
     </div>
 
     <!-- High-Quality Light with Comfort -->
-    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+    <div class="flex flex-col mb-8 lg:flex-row gap-7">
       <div class="flex w-[345px] gap-4 cursor-pointer">
         <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
         <div>
           <h2 class="text-white font-['Times_New_Roman'] text-3xl font-light leading-8 mb-3">
             {{ section.settings.quality_heading }}
           </h2>
-          <p class="leading-normal text-base text-white font-light">{{ section.settings.quality_text }}</p>
+          <p class="text-base font-light leading-normal text-white">{{ section.settings.quality_text }}</p>
         </div>
       </div>
       <div class="flex-none w-[163px] h-[150px]">
-        <div class="border rounded-xl overflow-hidden">
+        <div class="overflow-hidden border rounded-xl">
           <img
             src="{{ section.settings.quality_image  | file_url }}"
             alt="Light Image"
             width=""
             height=""
-            class="w-full h-full object-contain object-center rounded-xl">
+            class="object-contain object-center w-full h-full rounded-xl">
         </div>
       </div>
     </div>
 
     <!-- Easy Installation & Rechargeable Features -->
-    <div class="flex flex-col lg:flex-row mb-8 gap-7">
+    <div class="flex flex-col mb-8 lg:flex-row gap-7">
       <div class="flex w-[345px] gap-4 cursor-pointer">
         <div class="w-[18px] h-[155px] rounded-t-md rounded-b-md bg-white"></div>
         <div>
           <h2 class="text-white font-['Times_New_Roman'] text-3xl font-light leading-8 mb-3">
             {{ section.settings.installation_heading }}
           </h2>
-          <p class="leading-normal text-base text-white font-light">{{ section.settings.installation_text }}</p>
+          <p class="text-base font-light leading-normal text-white">{{ section.settings.installation_text }}</p>
         </div>
       </div>
       <div class="flex-none w-[163px] h-[150px]">
-        <div class="border rounded-xl overflow-hidden">
+        <div class="overflow-hidden border rounded-xl">
           <img
-            src="{{ section.settings.installation_image  | asset_url }}"
+            src="{{ section.settings.installation_image  | file_url }}"
             alt="Light Image"
             width=""
             height=""
-            class="w-full h-full object-contain object-center rounded-xl">
+            class="object-contain object-center w-full h-full rounded-xl">
         </div>
       </div>
     </div>

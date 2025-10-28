@@ -2,7 +2,7 @@
   <div class="relative mx-auto max-w-[1440px] min-h-screen px-6 py-20 flex items-center justify-between">
 
     <!-- Top-right Arrows -->
-    <div class="absolute right-12 top-12 z-20 flex gap-3">
+    <div class="absolute z-20 flex gap-3 right-12 top-12">
       <button class="h-10 w-10 md:h-11 md:w-11 rounded-lg bg-[#1A1A1A] text-white/80 grid place-items-center hover:bg-[#A1A1A1] hover:text-black transition">
         {% render 'icon-left-arrow' %}
       </button>
@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-[#636363] py-6 px-4 flex justify-center gap-44">
+  <div class="bg-[#636363] py-10 px-4 flex justify-center gap-44">
     <div class="flex items-center gap-4">
       <img
         src="{{ section.settings.icon_1 |  file_url }}"

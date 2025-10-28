@@ -1,21 +1,23 @@
-<div class="brands-slider-section py-14">
-  <div class="swiper brands-slider w-full relative overflow-hidden">
-    <div class="swiper-wrapper flex absolute transform-origin-center animate-rotateSlider">
-      {% for i in (1..6) %}
-        {% assign image_setting = 'slider_' | append: i %}
-        {% assign image = section.settings[image_setting] %}
-        {% if image != blank %}
-          <div class="swiper-slide flex items-center justify-center">
-            <img
-              src="{{ image | file_url }}"
-              alt="Brand {{ i }}"
-              width="150"
-              height="30"
-              class="w-[150px] h-[30px] object-contain transition-transform duration-300 hover:scale-105"
-              loading="lazy">
-          </div>
-        {% endif %}
-      {% endfor %}
+<div class="container mx-auto py-14">
+  <div class="brands-slider-section">
+    <div class="relative w-full overflow-hidden swiper brands-slider">
+      <div class="absolute flex swiper-wrapper transform-origin-center animate-rotateSlider">
+        {% for i in (1..6) %}
+          {% assign image_setting = 'slider_' | append: i %}
+          {% assign image = section.settings[image_setting] %}
+          {% if image != blank %}
+            <div class="flex items-center justify-center swiper-slide">
+              <img
+                src="{{ image | image_url: width: 150 }}"
+                alt="Brand {{ i }}"
+                width=""
+                height=""
+                class="w-[150px] h-[30px] object-cover text-white transition-transform duration-300 hover:scale-105"
+                loading="lazy">
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

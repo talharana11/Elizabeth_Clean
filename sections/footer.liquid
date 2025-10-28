@@ -1,0 +1,192 @@
+<section class="bg-[#121212] text-white">
+  <div class="px-4 py-20 mx-auto max-w-7xl lg:py-24 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-14 lg:grid-cols-12">
+
+      <div class="lg:col-span-4">
+        <h2 class="font-Montserrat font-semibold text-[34px] uppercase leading-[1.1] tracking-tight max-w-[300px]">
+          SIGN UP FOR OUR NEWSLETTER AND GET A CHANCE TO WIN €100 SHOPPING CREDIT KL HOME
+        </h2>
+
+        {% form 'customer'
+          , id: 'NewsletterFooter' %}
+          <input
+            type="hidden"
+            name="contact[tags]"
+            value="newsletter">
+          <div class="max-w-[330px] mt-8">
+            <div class="flex items-center bg-transparent rounded-lg ring-1 ring-white/5">
+              <input
+                class="w-full bg-transparent px-5 py-4 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-[#FFFFFF] focus:outline-none placeholder-white/60"
+                type="email"
+                name="contact[email]"
+                required
+                placeholder="E-mail address" />
+              <button type="submit" class="inline-flex items-center justify-center w-6 h-6 mr-3 text-black transition bg-[#2A2A2A] rounded-full">
+                {% render 'icon-chevron-right' %}
+              </button>
+            </div>
+            {% if form.errors %}
+              <p class="mt-3 text-sm text-red-400">{{ form.errors | default_errors }}</p>
+            {% endif %}
+            {% if form.posted_successfully? %}
+              <p class="mt-3 text-sm text-emerald-400">Thanks! You’re in.</p>
+            {% endif %}
+          </div>
+        {% endform %}
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white">Info</h3>
+        <ul class="space-y-3 text-white/85">
+          <li>
+            <a href="/pages/cashback" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Cashback</a>
+          </li>
+          <li>
+            <a href="/pages/manuals" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Manuals</a>
+          </li>
+          <li>
+            <a href="/policies/privacy-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Privacy policy</a>
+          </li>
+          <li>
+            <a href="/policies/shipping-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Shipping policy</a>
+          </li>
+          <li>
+            <a href="/policies/refund-policy" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Return policy</a>
+          </li>
+          <li>
+            <a href="/policies/terms-of-service" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Terms and Conditions</a>
+          </li>
+          <li>
+            <a href="/pages/contact" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Contact</a>
+          </li>
+          <li>
+            <a href="/pages/privacy-choices" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/60 hover:text-white transition">Your privacy choices</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white">Opening hours</h3>
+        <ul class="space-y-2 text-white/85">
+          <li>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Monday - Friday:</span>
+            <span class="-ml-1 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 22:00</span>
+          </li>
+          <li>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Saturday:</span>
+            <span class="-ml-1 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 20:00</span>
+          </li>
+          <li>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.4] tracking-normal text-[#FFFFFFB2]">Sunday:</span>
+            <span class="-ml-1 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-[#FFFFFFB2]">09:00 - 20:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="mb-6 font-Montserrat font-bold text-[18px] leading-[1.4] tracking-normal text-white uppercase">Contact</h3>
+        <div class="space-y-2 text-white/85">
+          <p>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">WWW.KLHOME.NL</span>
+          </p>
+          <p>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">E-MAIL:</span>
+            <a href="mailto:info@klhome.nl" class="font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/50 hover:text-white transition">info@klhome.nl</a>
+          </p>
+          <p>
+            <span class="font-Montserrat font-bold text-[17px] leading-[1.5] tracking-normal text-white/60">Amsterdam, Netherlands</span>
+          </p>
+        </div>
+        <p class="mt-8 font-Montserrat font-normal text-[16px] leading-[1.5] tracking-normal text-white/50">
+          Our team usually answers your questions within 24 hours
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-6 mt-16">
+      <div class="flex w-full space-x-6">
+        <!-- Country -->
+        <div class="flex items-center gap-2">
+          <img
+            src="{{ 'us-flag.png' | asset_url }}"
+            alt="US Flag"
+            width=""
+            height=""
+            class="w-5 h-5 rounded-sm">
+          <span class="font-Montserrat font-bold text-white text-[15px] leading-[1.4] tracking-normal">United States (USD $)</span>
+        </div>
+
+        <!-- Language -->
+        <div class="font-Montserrat font-bold text-white text-[15px] leading-[1.4] tracking-norma">English</div>
+      </div>
+
+      <div class="flex flex-col gap-6 mt-10 md:flex-row md:justify-between md:items-center">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+          <p class="text-white/60 font-Montserrat font-normal text-[14px] leading-[1.5] tracking-normal">&copy; {{ 'now' | date: "%Y" }}, KL Home</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          {% for type in shop.enabled_payment_types %}
+            {{ type | payment_type_svg_tag: class: 'h-6 w-auto opacity-90' }}
+          {% endfor %}
+
+          {% if shop.enabled_payment_types == empty %}
+            <img
+              src="{{ 'american express.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'apple pay.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'bancontact.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'I deal.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'klarna.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'mobi cash.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'jazz cash.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+            <img
+              src="{{ 'pay pal.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 text-white opacity-90">
+            <img
+              src="{{ 'visa.png' |  asset_url }}"
+              alt="Visa"
+              width=""
+              height=""
+              class="w-auto h-6 opacity-90">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

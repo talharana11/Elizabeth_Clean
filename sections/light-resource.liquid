@@ -1,5 +1,5 @@
 <div class="container px-5 py-24 mx-auto">
-  <div class="text-center w-full mb-20">
+  <div class="w-full mb-20 text-center">
     <h1 class="text-[40px] font-light mb-4 text-white font-['Times_New_Roman'] leading-9 tracking-wide">
       {{ section.settings.main_heading }}
     </h1>
@@ -8,22 +8,22 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
+  <div class="grid grid-cols-1 gap-12 text-center sm:grid-cols-2 lg:grid-cols-3">
     {% for i in (1..6) %}
       {% assign image_id = 'image_' | append: i %}
       {% assign title_id = 'title_' | append: i %}
       {% assign desc_id = 'description_' | append: i %}
 
       {% if section.settings[title_id] != blank %}
-        <div class="bg-zinc-950 p-8 rounded-xl shadow-lg">
-          <div class="text-white mb-4">
+        <div class="p-8 shadow-lg bg-zinc-950 rounded-xl">
+          <div class="mb-4 text-white">
             {% if section.settings[image_id] %}
               <img
                 src="{{ section.settings[image_id] | file_url}}"
                 alt="{{ section.settings[title_id] }}"
                 width=""
                 height=""
-                class="mx-auto w-20 h-20">
+                class="w-20 h-20 mx-auto">
             {% endif %}
           </div>
           <div class="w-[280px] mx-auto">
