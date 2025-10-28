@@ -2,7 +2,6 @@
 
 <div class="relative" x-data="{ mobileMenuOpen: false}">
   <div class="mx-auto lg:px-14 max-w-1550 md:px-3 xs:px-0">
-    <div class="flex items-center justify-between py-2 ">
       <!-- Mobile menu button -->
       <div class="flex items-center justify-between my-2 ml-4 mr-2 z-100 lg:hidden">
         <button
@@ -19,17 +18,13 @@
             <img
               src="{{ section.settings.logo | file_url }}"
               alt="{{ shop.name }}"
-              width=""
-              height=""
               loading="eager"
               class="h-[50px] w-[191px]">
           </a>
         {% else %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ 'logo.png' |  file_url }}"
               alt="{{ shop.name }}"
-              width=""
               height=""
               class="h-[50px] w-[191px]"
               loading="eager">
@@ -89,7 +84,6 @@
             {% if section.settings.logo != blank %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ section.settings.logo | file_url }}"
                   alt="{{ shop.name }}"
                   width=""
                   height=""
@@ -99,7 +93,6 @@
             {% else %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ 'logo.png' | file_url }}"
                   alt="{{ shop.name }}"
                   width=""
                   height=""
