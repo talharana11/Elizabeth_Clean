@@ -17,20 +17,20 @@
         {% if section.settings.logo != blank %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ section.settings.logo | image_url: width: 191 }}"
+              src="{{ section.settings.logo | file_url }}"
               alt="{{ shop.name }}"
-              width="{{ section.settings.hero_image.width }}"
-              height="{{ section.settings.hero_image.height }}"
+              width=""
+              height=""
               loading="eager"
               class="h-[50px] w-[191px]">
           </a>
         {% else %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ 'logo.png' |  image_url: width: 191 }}"
+              src="{{ 'logo.png' |  file_url }}"
               alt="{{ shop.name }}"
-              width="{{ section.settings.hero_image.width }}"
-              height="{{ section.settings.hero_image.height }}"
+              width=""
+              height=""
               class="h-[50px] w-[191px]"
               loading="eager">
           </a>
@@ -89,20 +89,20 @@
             {% if section.settings.logo != blank %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ section.settings.logo | image_url: width: 100 }}"
+                  src="{{ section.settings.logo | file_url }}"
                   alt="{{ shop.name }}"
-                  width="{{ section.settings.hero_image.width }}"
-                  height="{{ section.settings.hero_image.height }}"
+                  width=""
+                  height=""
                   loading="eager"
                   class="h-[26px] max-w-[101px]">
               </a>
             {% else %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ 'logo.png' | image_url: width: 85 }}"
+                  src="{{ 'logo.png' | file_url }}"
                   alt="{{ shop.name }}"
-                  width="{{ section.settings.hero_image.width }}"
-                  height="{{ section.settings.hero_image.height }}"
+                  width=""
+                  height=""
                   class="h-[26px] max-w-[101px]"
                   loading="eager">
               </a>
