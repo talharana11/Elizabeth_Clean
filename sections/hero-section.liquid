@@ -1,4 +1,4 @@
-<div class="relative min-h-screen mx-auto max-w-1550">
+<div class="relative min-h-screen mx-auto max-w-1536">
   <div class="relative w-full">
     <!-- Hero Background Image -->
     {% if section.settings.hero_image != blank %}
@@ -6,8 +6,8 @@
         src="{{ section.settings.hero_image | image_url: width: 1320 }}"
         alt="{{ section.settings.hero_image.alt | escape }}"
         loading="eager"
-        width="{{ section.settings.hero_image.width }}"
-        height="{{ section.settings.hero_image.height }}"
+        width=""
+        height=""
         class="object-cover object-center w-full min-h-screen text-white -mt-28 px-18">
     {% endif %}
 
@@ -47,8 +47,8 @@
         <img
           src="{{ section.settings.customer_bg | image_url: width: 400 }}"
           alt="Customer Background"
-          width="{{ section.settings.hero_image.width }}"
-          height="{{ section.settings.hero_image.height }}"
+          width=""
+          height=""
           loading="eager"
           class="w-[400px] h-[300px] object-contain md:w-[350px] md:h-[220px]">
       {% endif %}
@@ -61,8 +61,8 @@
                 <img
                   src="{{ 'block.settings.customer_image' | image_url: width: 15 }}"
                   alt="Customer {{ forloop.index }}"
-                  width="{{ section.settings.hero_image.width }}"
-                  height="{{ section.settings.hero_image.height }}"
+                  width=""
+                  height=""
                   loading="eager"
                   class="object-cover -ml-3 rounded-full w-15 h-15">
               {% else %}
