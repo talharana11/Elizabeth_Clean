@@ -308,6 +308,9 @@
   .z-100 {
     z-index: 100;
   }
+  .z-1000 {
+    z-index: 1000;
+  }
   .col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -691,8 +694,8 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .max-w-1550 {
-    max-width: calc(var(--spacing) * 1550);
+  .max-w-1536 {
+    max-width: calc(var(--spacing) * 1536);
   }
   .max-w-\[101px\] {
     max-width: 101px;
