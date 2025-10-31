@@ -1,6 +1,194 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text_bar": "Free Shipping over $100"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "hero-section": {
+        "type": "hero-section",
+        "settings": {
+          "hero_image": "shopify://shop_images/hero_image.png",
+          "hero_subheading": "Your specialist in wireless lighting",
+          "hero_heading": "Atmospheric Light, Simple and Wireless",
+          "hero_description": "Discover KL Home's innovative, wireless lighting solutions that blend modern design with energy efficiency. Easy to install, rechargeable, and stylish, our lights enhance your space with effortless elegance and long-lasting performance.",
+          "btn_text": "SHOP NOW",
+          "btn_link": "",
+          "customer_count": "14500+",
+          "customer_text_1": "Satisfied Customers at KL",
+          "customer_text_2": "Home®"
+        }
+      },
+      "slider": {
+        "type": "slider",
+        "settings": {}
+      },
+      "best-seller": {
+        "type": "best-seller",
+        "settings": {
+          "section_title": "Our Bestsellers",
+          "product_1_title": "LED Cube Wall Lamp",
+          "product_1_description": "Beside Groot Wit",
+          "product_1_reviews": "17 Reviews",
+          "product_1_price": "$79.00",
+          "product_2_title": "ACHTERGROUND",
+          "product_2_description": "Beside Groot Wit",
+          "product_2_reviews": "17 Reviews",
+          "product_2_price": "$79.00",
+          "product_3_title": "TABLE LAMP",
+          "product_3_description": "Wit Achterground",
+          "product_3_reviews": "17 Reviews",
+          "product_3_price": "$79.00",
+          "product_4_title": "TABLE LAMP",
+          "product_4_description": "Wit Achterground",
+          "product_4_reviews": "17 Reviews",
+          "product_4_price": "$79.00",
+          "product_5_title": "ACHTERGROUND",
+          "product_5_description": "Beside Groot Wit",
+          "product_5_reviews": "17 Reviews",
+          "product_5_price": "$79.00",
+          "product_6_title": "ACHTERGROUND",
+          "product_6_description": "Wit Achterground",
+          "product_6_reviews": "17 Reviews",
+          "product_6_price": "$79.00",
+          "product_7_title": "TABLE LAMP",
+          "product_7_description": "Wit Achterground",
+          "product_7_reviews": "17 Reviews",
+          "product_7_price": "$79.00",
+          "product_8_title": "TABLE LAMP",
+          "product_8_description": "Wit Achterground",
+          "product_8_reviews": "17 Reviews",
+          "product_8_price": "$79.00",
+          "view_text": "VIEW ALL",
+          "view_link": ""
+        }
+      },
+      "image-text": {
+        "type": "image-text",
+        "settings": {
+          "main_heading": "Effortless Installation with KL Home",
+          "description_text": "Our lights are designed to simplify your life. Watch how easy it is to install and enjoy our versatile, stylish lighting solutions in just minutes."
+        }
+      },
+      "lighting-solution": {
+        "type": "lighting-solution",
+        "settings": {
+          "main_heading": "Illuminate Your Space with KL Home Lighting Solutions",
+          "elegant_design_heading": "Elegant Design & Versatility",
+          "elegant_design_text": "Our lights seamlessly blend into any room, whether it's the living room, bedroom, or hallway, offering both function and style.",
+          "quality_heading": "High-Quality Light with Comfort",
+          "quality_text": "Each of our products provides soft, indirect light that enhances ambiance, making your space feel welcoming and cozy.",
+          "installation_heading": "Easy Installation & Rechargeable Features",
+          "installation_text": "No need for complicated setups—our wireless, rechargeable lights are simple to install and maintain."
+        }
+      },
+      "light-resource": {
+        "type": "light-resource",
+        "settings": {
+          "main_heading": "How to Use Your KL Home Lighting",
+          "main_description": "Welcome to your new KL Home lighting experience! Our products are designed to be easy to set up and use, providing you with convenience, style, and energy efficiency. Follow the simple steps below to start enjoying your new lighting:",
+          "title_1": "UNBOX YOUR LIGHT",
+          "description_1": "Carefully remove the lighting product from its packaging.",
+          "title_2": "CHARGE THE BATTERY",
+          "description_2": "Plug in the charging cable and fully charge the light until the indicator shows green.",
+          "title_3": "INSTALL THE LIGHT",
+          "description_3": "Choose a flat surface, secure with adhesive strips or screws.",
+          "title_4": "POWER ON",
+          "description_4": "Press and hold the power button for 2-3 seconds to turn on.",
+          "title_5": "ENJOY THE LIGHT",
+          "description_5": "Adjust brightness and color to create your perfect ambiance.",
+          "title_6": "RECHARGE AS NEEDED",
+          "description_6": "When the light dims, recharge it to maintain performance.",
+          "button_text": "SHOP NOW",
+          "button_link": ""
+        }
+      },
+      "your-space": {
+        "type": "your-space",
+        "settings": {
+          "heading": "Transform Your Space with Effortless Lighting Solutions",
+          "description": "Elevate your home with KL Home’s modern, energy-efficient lighting options. Our products are designed for simplicity, offering easy installation, stylish designs, and long-lasting performance.",
+          "button_label": "Shop Now",
+          "button_link": "",
+          "show_play_button": true
+        }
+      },
+      "wall-lamp": {
+        "type": "wall-lamp",
+        "settings": {
+          "decorative_text": "Wall Lamp",
+          "main_title": "360° Rechargeable Wall Lamp",
+          "feature_1_title": "Easy to assemble – no tools required",
+          "feature_2_title": "Light in 2 Minutes",
+          "feature_2_description": "Easily attach the mounting plate with the included double-sided tape. The powerful magnets ensure a firm and secure fit – without drilling holes or running electrical wires. Ideal for locations or rental properties where drilling is not desirable.",
+          "cta_text": "Shop Now",
+          "cta_link": "",
+          "title_1": "PREMIUM SHIPPING IN NL/BE",
+          "title_2": "BUY NOW, PAY LATER",
+          "title_3": "100 DAYS TO REFLECT"
+        }
+      },
+      "review-slider": {
+        "type": "review-slider",
+        "settings": {}
+      },
+      "interaction": {
+        "type": "interaction",
+        "settings": {
+          "heading": "Passionate About Intelligent Interaction",
+          "paragraph": "Discover the perfect lighting for every corner of your home with KL Home's stylish, versatile, and energy-efficient products.",
+          "button_text": "SHOP NOW",
+          "button_link": "",
+          "image_overlay_text": "Illuminate Your World with Effortless Style and Sustainable Lighting Solutions.",
+          "customer_count": "14500+",
+          "customer_stat_label": "Satisfied customers at KL Home®",
+          "star_rating": 5
+        }
+      },
+      "explore-lamp": {
+        "type": "explore-lamp",
+        "settings": {
+          "section_heading": "Explore Our Bestsellers",
+          "show_carousel_buttons": true
+        }
+      },
+      "your-partner": {
+        "type": "your-partner",
+        "settings": {}
+      },
+      "join-insta": {
+        "type": "join-insta",
+        "settings": {}
+      },
+      "faq": {
+        "type": "faq",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  },
   "presets": {
-    "Default": { }
+    "Default": {}
   }
 }
