@@ -1,10 +1,10 @@
 {% assign main_menu_linklist = linklists[section.settings.menu].links %}
 
-<div class="relative" x-data="{ mobileMenuOpen: false}" style="width: 100%; z-index: 999;">
-  <div class="mx-auto max-w-[1440px] z-1000">
-    <div class="flex items-center justify-between px-6 py-2">
+<div class="relative" x-data="{ mobileMenuOpen: false}">
+  <div class="mx-auto max-w-9xl">
+    <div class="flex items-center justify-between py-2 xl:px-6 lg:px-8 md:px-2">
       <!-- Mobile menu button -->
-      <div class="flex items-center justify-between my-2 ml-4 mr-2 lg:hidden">
+      <div class="flex items-center justify-between my-2 ml-4 mr-2 lg:hidden z-1000">
         <button
           x-on:click="mobileMenuOpen = true"
           type="button"
@@ -13,32 +13,28 @@
         </button>
       </div>
       <!-- Store Name / Store Logo -->
-      <div class="flex truncate lg:flex-1 xs:justify-between">
+      <div class="flex truncate lg:flex-1 xs:justify-between z-1000">
         {% if section.settings.logo != blank %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ section.settings.logo | file_url }}"
+              src="{{ section.settings.logo | image_url }}"
               alt="{{ shop.name }}"
-              width=""
-              height=""
-              loading="eager"
-              class="h-[50px] w-[191px]">
+              loading="lazy"
+              class="h-[50px] xl:w-[190px] lg:w-[150px]">
           </a>
         {% else %}
           <a href="{{ routes.root_url }}">
             <img
-              src="{{ 'logo.png' |  file_url }}"
+              src="{{ 'logo.png' |  image_url }}"
               alt="{{ shop.name }}"
-              width=""
-              height=""
-              class="h-[50px] w-[191px]"
-              loading="eager">
+              class="h-[50px] xl:w-[190px] lg:w-[150px]"
+              loading="lazy">
           </a>
         {% endif %}
       </div>
 
       <!-- Navigation Menu -->
-      <nav class="flex items-center justify-end md:bg-none lg:bg-[#191919] rounded-full xl:p-6 xs:p-2 lg:p-4 z-100">
+      <nav class="flex items-center justify-end md:bg-none lg:bg-[#191919] rounded-full xl:p-6 lg:p-4 z-1000">
         <div class="hidden xl:space-x-16 lg:space-x-6 md:space-x-4 sm:space-x-2 lg:flex">
           {% for link in main_menu_linklist %}
             {% if link.links != blank %}
@@ -50,14 +46,14 @@
               </div>
             {% else %}
               <div class="relative">
-                <a href="{{ link.url }}" class="text-[20px] lg:text-xl font-medium leading-normal text-white">{{ link.title }}</a>
+                <a href="{{ link.url }}" class="lg:text-[16px] xl:text-[20px] font-medium leading-normal text-white">{{ link.title }}</a>
               </div>
             {% endif %}
           {% endfor %}
         </div>
 
         <!-- Cart Button / Account Link -->
-        <div class="flex ml-8 xl:space-x-10 lg:space-x-6 md:space-x-4 xs:space-x-3">
+        <div class="flex ml-8 xl:space-x-10 lg:space-x-6 md:space-x-4 xs:space-x-3 xs:mr-5">
           <button class="text-base text-gray-500 transition-colors cursor-pointer whitespace-nowrap hover:text-white">
             {% render 'icon-search' %}
           </button>
@@ -89,22 +85,18 @@
             {% if section.settings.logo != blank %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ section.settings.logo | file_url }}"
+                  src="{{ section.settings.logo | image_url }}"
                   alt="{{ shop.name }}"
-                  width=""
-                  height=""
-                  loading="eager"
+                  loading="lazy"
                   class="h-[26px] max-w-[101px]">
               </a>
             {% else %}
               <a href="{{ routes.root_url }}">
                 <img
-                  src="{{ 'logo.png' | file_url }}"
+                  src="{{ 'logo.png' | image_url }}"
                   alt="{{ shop.name }}"
-                  width=""
-                  height=""
                   class="h-[26px] max-w-[101px]"
-                  loading="eager">
+                  loading="lazy">
               </a>
             {% endif %}
           </div>
@@ -130,7 +122,7 @@
                   {% endfor %}
                 </div>
               {% else %}
-                <a href="{{ link.url }}" class="flex items-center p-3 -m-3 text-white rounded-md">
+                <a href="{{ link.url }}" class="flex items-center p-3 -m-3 font-Montserrat font-medium text-[20px] leading-none text-white rounded-md">
                   {{ link.title }}
                 </a>
               {% endif %}
